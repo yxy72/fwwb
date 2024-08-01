@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../res/font/iconfont.css">
+    <link rel="stylesheet" href="../css/PageB_1.css">
+</head>
+<body>
+        <!-- <div class="cnm" style="width: auto;height: auto;background-color: yellow;color:red;position: absolute;z-index: 10;" >?</div> -->
+
+    <div class="page">
+        <div class="Container">
+            <div class="PageBContainer">
+                <div class="formContainer">
+                    
+        
+                    <div class="MainRow1">
+        
+                        <div class="MainLeft">
+                            <img class="MainIcon" src="../res/img/PB1_2.png" >
+                            <p class="MainTitle">信息查询 -&nbsp</p>
+        
+                            <p class="MainTitle" style="cursor: pointer;" title="复制" onclick="copyLabel(this)" id = "MainTitle">全部</p>
+                            <button class="MainBtn"  onclick="Switch()">切换</button>
+        
+                        </div>
+        
+                        <div class="MainRight">
+                            <!-- <button class="MainBtn1" onclick="rebort()">reset</button> -->
+        
+                            <div class="test">筛选</div>
+                            <button class="chose" onclick="listShow()" onBlur="listDisapear()">
+                                <div class="arrow"></div>
+                                <div class="chosed">较高级别</div>
+                            </button>
+                            <div class="choseList">
+                                <ul>
+                                    <li onclick="listSel(1)">人工数据</li>
+                                    <li onclick="listSel(2)">传感器</li>
+                                    <li onclick="listSel(3)">标记项</li>
+                                    <li onclick="listSel(4)">级别降序</li>
+                                    <li onclick="listSel(5)">时间降序</li>
+                                </ul>
+                            </div> 
+                        </div>
+        
+                    </div>
+                    <div class="MainRow2">
+                        <div class="formDataNum">当前共0项数据</div>
+        
+                    </div>
+        
+                    <table class="formTitle">
+                        <tr>
+                            <th id="th0">级别</th>
+                            <th id="th1">桥梁对象</th>
+                            <th id="th2">项目</th>
+                            <th id="th3">数据</th>
+                            <th id="th4">来源</th>
+                            <th id="th5">备注</th>
+                            <th id="th6">操作</th>
+                            <th id="th7">时间</th>
+                            <th id="th8">地点</th>
+                            <th id="th9">更多</th>
+        
+                        </tr>
+                    </table>
+                    <div class="tableDiv">
+                        <table id="form" class="form">
+                        </table>
+                    </div>
+                    
+        
+        
+        
+                </div>
+              
+                <div class="B1Container">
+                    <div class="BTip" id="BTip0">· 选择一条传感器数据项并点击详情。</div>
+                    <div class="B1row0">
+                        <img class="formPicture1" src="../res/img/list.png" >
+                        <p class="formTip1">传感器监测数据</p>
+                    </div>
+        
+                    <div id="B0Content" style="visibility: hidden;">
+                        <div class="B1row">
+                            <div class="B1Label">· 桥梁编号：</div>
+                            <div class="B1objName" id="B1obj">BT20280435</div>
+                        </div>
+                        <div class="B1row">
+                            <div class="B1Label">· 传感器编号：</div>
+                            <div class="B1objName" id="B1pt">171002592</div>
+                        </div>
+                        <div class="B1row">
+                            <div class="B1Label">· 上传时间：</div>
+                            <div class="B1objName" id="B1time">2021/03/08 12:12:12</div>
+                        </div>
+                        <div class="B1row">
+                            <div class="B1Label">· 上传数据类型：</div>
+                            <div class="B1objName"  id="B1type">[dataGroup]</div>
+                        </div>
+                        <div class="B1row">
+                            <div class="B1Label">· 上传数据：</div>
+                            <div class="B1objName" id="B1data">{"1870.14","192.5","2333","512.0"}</div>
+                        </div>
+                        <div class="B1row">
+                            <div class="B1Label">· 正常工作时间：</div>
+                            <div class="B1objName" id="B1runtime">23:21:20:19</div>
+                        </div>
+                    </div>
+        
+                    
+                </div>
+                <div class="B2Container">
+                    <div class="BTip" id="BTip1">· 选择一条人工数据项并点击详情。</div>
+                    <div class="B1row0">
+                        <img class="formPicture1" src="../res/img/list.png" >
+                        <p class="formTip1">人工检测数据</p>
+                        <button class="a2Btn0" style="margin-left: 200px;visibility: hidden;" onclick="openAuto()">
+                            更多
+                        </button>
+                    </div>
+                    <div id="B1Content" style="visibility: hidden;">
+                        <div class="B2row1">
+                            <div class="B2column">
+                                <div class="B1Label">· 桥梁编号：</div>
+                                <div class="B1objName" id="B2obj">BT20280435</div>
+                            </div>
+                            
+                        </div>
+                        <div class="B2row1">
+                            <div class="B2column">
+                                <div class="B1Label">· 检测人工号：</div>
+                                <div class="B1objName" id="B2jc">171002592</div>
+                            </div>
+                            <div class="B2column">
+                                <div class="B1Label">· 录入人工号：</div>
+                            <div class="B1objName" id="B2lr">171002592</div>
+                            </div>
+                        </div>
+                        <div class="B2row1">
+                            <div class="B2column">
+                                <div class="B1Label">· 检测日期：</div>
+                                <div class="B1objName"  id="B2sacntime">[dataGroup]</div>
+                            </div>
+                            <div class="B2column">
+                                <div class="B1Label">· 上传日期：</div>
+                                <div class="B1objName" id="B2loadtime">{"187512.0"}</div>
+                            </div>
+                        </div>
+                        <div class="B1row">
+                            <div class="B1Label">· 维护建议：</div>
+                        </div>
+                        <textarea class="B2assess" id="B2assess">评价</textarea>
+                    </div>
+                </div>
+        
+        
+        
+                <div class="B3Container">
+                    <div class="wTitleImg"></div>
+                    <p class="wTitleLabel">导出</p>
+        
+        
+                    <div class="exportPanelRow1">
+                        <div class="selBtnPanel" id="btn0">
+                            <div class="selBtnBgd"></div>
+                            <div class="selBtn"></div>
+                            <div class="selLabel"></div>
+                            <img class="selImg">
+                        </div>
+                        <div class="selBtnPanel" id="btn3">
+                            <div class="selBtnBgd"></div>
+                            <div class="selBtn"></div>
+                            <div class="selLabel"></div>
+                            <img class="selImg">
+                        </div>
+                        
+                        
+                        
+                    </div>
+                    <div class="exportPanelRow1">
+                        <div class="selBtnPanel" id="btn1">
+                            <div class="selBtnBgd"></div>
+                            <div class="selBtn"></div>
+                            <div class="selLabel"></div>
+                            <img class="selImg">
+                        </div>
+                        
+                        <div class="selBtnPanel" id="btn2">
+                            <div class="selBtnBgd"></div>
+                            <div class="selBtn"></div>
+                            <div class="selLabel"></div>
+                            <img class="selImg">
+                        </div>
+                    </div>
+                    <div class="exportPanelRow1">
+                        
+                        <i class="iconfont icon-riqi"></i>
+                        <div class="selDatePanel">
+                            <div class="inputBorder"></div>
+                            <div class="selDateLabel">指定日期</div>
+                            <input class="selDateInput1" id="fy" value="2020" maxlength="4">
+                            <div class="maohaoLabel">/</div>
+                            <input class="selDateInput2" id="fm" value="1" maxlength="2">
+                            <div class="maohaoLabel">/</div>
+                            <input class="selDateInput2" id="fd" value="1" maxlength="2">
+                            <div class="maohaoLabel">&nbsp-&nbsp</div>
+                            <input class="selDateInput1" id="ty" value="2021" maxlength="4">
+                            <div class="maohaoLabel">/</div>
+                            <input class="selDateInput2" id="tm" value="1" maxlength="2">
+                            <div class="maohaoLabel">/</div>
+                            <input class="selDateInput2" id="td" value="1" maxlength="2">
+                        </div>
+                    </div>
+                    <div class="exportPanelRow1">
+                        <i class="iconfont icon-mubiao"></i>
+                        <div class="selDatePanel">
+                            <div class="selDateLabel">桥梁对象</div>
+                            <input class="selDateInput1" style="width: 120px;" id="obj" value="">
+                            <div class="inputBorder" style="width: 120px;"></div>
+                            <div style="color: gray;font-size: 10px;margin-left: 15px;margin-top: 5px;">留空为所有</div>
+                        </div>
+                    </div>
+                    <div class="exportPanelRow2">
+                        <div class="exportTip"></div>
+                        <button class="wDownload"  onclick="Export()">导出</button>
+                    </div>
+                </div>
+        
+            </div>
+
+          
+          
+        </div>
+
+        <div class="byebyeArea" onclick="closeWindow()"  style="visibility: hidden;"></div>
+        <div class="dragArea"  style="visibility: hidden;" >
+            <div class="area2DragDiv"  ondragstart="window.event.returnValue=false;return false;">
+                <img class="closeBtn" onclick="closeWindow()" src="../res/img/PA2_1.png" >
+
+            </div>
+            <div class="window">
+                <div class="Area2Row1">
+
+                    <div class="Area2Row1Rectangle"></div>   
+                    <div class="Area2Row1Lebal">人工巡检数据</div>   
+                    <div class="spiltLine"></div>
+                </div>
+                <!-- <div class="Area2Row2">
+                
+                    <div class="aRow" style="margin-top: 10px">
+                        <div class="aLabel">· 所属桥梁：</div>
+                        <div id="aBridge" style="font-weight: 600;">cyberpunk</div>
+                    </div>
+                    <div class="aRow">
+                        <div class="aLabel">· 病害信息：</div>
+                    </div>
+                    <div class="aRow">
+                        <div class="aLabel">&nbsp&nbsp</div>
+                        
+                        <div id="aDamageInfo" style="margin-top: -5px;color: tomato;font-style: italic ;">cyberpunk</div>
+                    </div>
+                    <div class="aRow">
+                        <div class="aLabel">· 病害评价：</div>
+                    </div>
+                    <div class="aRow">
+                        <div class="aLabel">&nbsp&nbsp</div>
+                        
+                        <div id="aDamageEva" style="margin-top: -5px;color: gray;font-style: italic ;">cyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunk</div>
+                    </div>
+                    <div class="aRow">
+                        <div class="aLabel">· 其他备注：</div>
+                    </div>
+                    <div class="aRow">
+                        <div class="aLabel">&nbsp&nbsp</div>
+                        
+                        <div id="aRemark" style="margin-top: -5px;color: gray;font-style: italic ;">cyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunkcyberpunk</div>
+                    </div>
+                    <div class="aRow">
+                        <div class="aLabel">· 操作</div>
+                    </div>
+                    <div class="aRow">
+                        <img class="aPicture" title="下载检测报告" src="../res/img/PB2_4.png" >
+                        
+                        <img class="aPicture" title="下载现场图片" style="margin-left: 6px;" src="../res/img/PB2_2.png" >
+                    </div>
+
+                </div> -->
+                <div>
+                    <div class="formContainerNew">
+                        <table class="formTitleNew">
+                            <tr>
+                                <th id="th0New">部件号</th>
+                                <th id="th1New">部件名称</th>
+                                <th id="th2New">评分</th>
+                                <th id="th3New">缺损位置</th>
+                                <th id="th4New">缺损情况</th>
+                                <th id="th5New">局部图片</th>
+            
+                            </tr>
+                        </table>
+                        
+                    <div class="tableDivNew">
+                        <table id="formNew" class="formNew">
+                        </table>
+                    </div>
+                    <div class="newFormRow">
+                        <div class="newFormStyle">· 桥梁编号：</div>
+                        <div class="newFormStyle1" style="color: rgb(0, 39, 156);" id="Nbridge">--</div>
+                        <div style="margin-left: 20px;"></div>
+                        <div class="newFormStyle">总体状况评定等级：</div>
+                        <div class="newFormStyle1"  style="color: rgb(0, 39, 156);"  id="Ndj">--</div>
+                    </div>
+                    <div class="newFormRow">
+                        <div class="newFormStyle">· 维护建议：</div>
+                        <div class="newFormStyle1" id="Njy">--</div>
+                    </div>
+                    <div class="newFormRow">
+                        <div class="newFormStyle">· 所在地：</div>
+                        <div class="newFormStyle1" id="Nplace">--</div>
+                        <div style="margin-left: 20px;"></div>
+                        <div class="newFormStyle">主跨结构：</div>
+                        <div class="newFormStyle1" id="Nzkjg">--</div>
+                        <div style="margin-left: 20px;"></div>
+                        <div class="newFormStyle">桥长：</div>
+                        <div class="newFormStyle1" id="Nqc">--</div>
+                        <div style="margin-left: 20px;"></div>
+                        <div class="newFormStyle">最大跨径：</div>
+                        <div class="newFormStyle1" id="Nzdkj">--</div>
+                        <div style="margin-left: 20px;"></div>
+                        <div class="newFormStyle">管养单位：</div>
+                        <div class="newFormStyle1" id="Ngydw">--</div>
+                        <div style="margin-left: 20px;"></div>
+                        <div class="newFormStyle">气候：</div>
+                        <div class="newFormStyle1" id="Nqh">--</div>
+                        <div style="margin-left: 20px;"></div>
+
+                    </div>
+                    <div class="newFormRow">
+                        <div class="newFormStyle">· 记录人：</div>
+                        <div class="newFormStyle1" id="Njl">--</div>
+                        <div style="margin-left: 20px;"></div>
+                        <div class="newFormStyle">负责人：</div>
+                        <div class="newFormStyle1" id="Nfz">--</div>
+                        <div style="margin-left: 20px;"></div>
+                        <div class="newFormStyle">本次检测日期：</div>
+                        <div class="newFormStyle1" id="Nbcrq">--</div>
+                        <div style="margin-left: 20px;"></div>
+                        <div class="newFormStyle">下次检测日期：</div>
+                        <div class="newFormStyle1" id="Nxcrq">--</div>
+                        <div style="margin-left: 20px;"></div>
+
+                    </div>
+                    <div class="newFormRow">
+                        <div class="newFormStyle">· 备注：</div>
+                        <div class="newFormStyle1" id="Nbz">--</div>
+                        <div style="margin-left: 20px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+</body>
+<script src="../JS/PageB_1.js"></script>
+<script src="../JS/xlsx.mini.js"></script>
+<script src="../JS/test.js"></script>
+<script>
+    Resize();
+    function Resize(){
+        document.querySelector('.page').style.height = window.innerHeight+"px";
+        document.querySelector('.page').style.width = window.innerWidth+"px";
+
+    }
+    window.addEventListener('resize',function(){
+        Resize();
+    })
+</script>
+
+</html>

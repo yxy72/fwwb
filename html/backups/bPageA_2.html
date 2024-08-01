@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/PageA_3.css">
+        <!-- 注意，本页原名PageA_3.html -->
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="grid" >
+        <div class="gridMap">
+            <div class="list1"></div></div>
+        <div class="gridRight">
+            <div class="RChart">
+                <div class="RChart1">2</div>
+                <div class="RChart2">3</div>
+                <div class="RChart3">4</div>
+            </div>
+
+        </div>
+        <div class="gridBottom">
+            <div class="chart1" id="main"></div>
+       </div>
+   </div> -->
+
+   <div class="page">
+       <div class="Container">
+        <div class="PA3Container">
+            <div class="PanelTitle">
+                <div class="PTRow1">
+                    <div class="PTIconPanel">
+                        <img class="PTImg" src="../res/img/PA3_p5.png">
+                    </div>
+                    <div class="PTIconLabel">当前桥梁ID：</div>
+                    <div class="PTIconLabel" id="bridgeId" title="复制" onclick="copyLabel(this)" style="cursor: pointer;;color: wheat;">在地图或右侧选择</div>
+                    <div class="A1R1BtnArea">
+                        <button class="a1r1Btn" onclick="TrySelectOnclick()">选择</button>
+                    </div>
+                    <div class="a1r1ListControl">
+                        <div class="A1R1ListBody" style="visibility: hidden;">
+                            <ul class="ul" id="ul"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="PTRow0">
+                    <div class="PTTime" style="color: gray;">系统时间：</div>
+                </div>
+            </div>
+
+
+            <div class="PanelMain">
+                <div style="display: flex;align-items: center;justify-content: center;height: 100%;color: wheat;font-size: large;">此处WEBGL</div>
+            </div>
+
+            <div class="PanelR1" id="p1">
+                <div class="row1">
+                    <div class="iconPanel">
+                        <img class="img1" src="../res/img/PA3_p1.png">
+                    </div>
+                    <div class="iconLabel">伸缩缝数据 (μm)</div>
+                    <div class="SetPanel">
+                        编辑警报阈值：
+                        <input class="SetPanelInput" id="alertSS" type="text" value="" onchange="alarmValonChanged(this,1)">    
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="R1Chart"></div>
+                    <div class="row2TipsPanel">
+                        <div class="row2Average">--</div>
+                        <img class="row2Img">
+                        <div class="row2tip1">均值</div>
+                    </div>
+                </div>
+                <div class="row3">
+                    <div class="row3Container">
+                        <div class="itemPanel" id="ipP1_1">
+                            <div class="itemDiv"></div>
+                            <div class="itemLabel">点位1</div>
+                            <div class="itemStatus"></div>
+                        </div>
+                        <div class="itemPanel" id="ipP1_2">
+                            <div class="itemDiv"></div>
+                            <div class="itemLabel" >点位2</div>
+                            <div class="itemStatus"></div>
+                        </div>
+                        <div class="itemPanel" id="ipP1_3">
+                            <div class="itemDiv"></div>
+                            <div class="itemLabel">点位3</div>
+                            <div class="itemStatus"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="PanelR2">
+                <div class="row1">
+                    <div class="iconPanel">
+                        <img class="img1" src="../res/img/PA3_p2.png">
+                    </div>
+                    <div class="iconLabel">沉降值 (mm)</div>
+                    <div class="SetPanel">
+                        编辑警报阈值：
+                        <input class="SetPanelInput" id="alertCJ" type="text" value="" onchange="alarmValonChanged(this,2)">    
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="R2Chart"></div>
+                </div>
+                <div class="row3">
+                    <div class="row3Container">
+                        <div class="itemPanel" id="ipP2_1">
+                            <div class="itemDiv"></div>
+                            <div class="itemLabel">点位1</div>
+                            <div class="itemStatus"></div>
+                        </div>
+                        <div class="itemPanel" id="ipP2_2">
+                            <div class="itemDiv"></div>
+                            <div class="itemLabel" >点位2</div>
+                            <div class="itemStatus"></div>
+                        </div>
+                        <div class="itemPanel" id="ipP2_3">
+                            <div class="itemDiv"></div>
+                            <div class="itemLabel">点位3</div>
+                            <div class="itemStatus"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
+            
+
+
+
+
+            <div class="PanelB1">
+                <div class="row1">
+                    <div class="iconPanel">
+                        <img class="img1" src="../res/img/PA3_p4.png">
+                    </div>
+                    <div class="iconLabel">索力值 (kN)</div>
+                    <div class="SetPanel">
+                        编辑警报阈值：
+                        <input class="SetPanelInput" id="alertSL" type="text" value="" onchange="alarmValonChanged(this,4)">    
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="B1Chart"></div>
+                </div>
+                <div class="row3">
+                    <div class="ExceedContainer">
+                        <div>超过阈值：</div>
+                        <div class="chart4num">0</div>
+                        <div>个点位</div>
+                    </div>
+                </div>   
+
+            </div>
+
+            <div class="PanelR3">
+                <div class="row1">
+                    <div class="SetPanel">
+                        编辑警报阈值：
+                        <input class="SetPanelInput" id="alertYL" type="text" value="" onchange="alarmValonChanged(this,3)">    
+                    </div>
+                    <div class="iconPanel">
+                        <img class="img1" src="../res/img/PA3_p4.png">
+                    </div>
+                    <div class="iconLabel">应力值 (MPa)</div>
+                    
+                </div>
+                <div class="row2">
+                    <div class="R3Chart"></div>
+                </div>
+                <div class="row3">
+                    <div class="ExceedContainer">
+                        <div >超过阈值：</div>
+                        <div class="chart3num">0</div>
+                        <div>个点位</div>
+                    </div>
+                </div>    
+            </div>
+            
+            <div class="PanelB2">
+                <div class="brow1">
+                    <div class="iconPanel">
+                        <img class="img1" src="../res/img/PA3_p3.png">
+                    </div>
+                    <div class="iconLabel">温/湿度表盘</div>
+                </div>
+
+                <div class="brow2">
+                    <div class="RChart1"></div>
+                    <div class="RChart2"></div>
+                </div>
+                
+                <div class="brow3"></div>
+            </div>
+
+        </div>
+       </div>
+        
+   </div>
+
+
+
+
+
+
+
+
+
+
+   <script src="../JS/echarts.min.js"></script>
+   <script src="../JS/PageA_3.js"></script>
+   <script>
+        Resize();
+        function Resize(){
+            document.querySelector('.page').style.height = window.innerHeight+"px";
+            document.querySelector('.page').style.width = window.innerWidth+"px";
+
+        }
+        window.addEventListener('resize',function(){
+            Resize();
+        })
+</script>
+</body>
+</html>

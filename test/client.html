@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajaxtest</title>
+</head>
+<body>
+    <button style="width: 200px;height: 100px;">test</button>
+    <div class="label" >content</div>
+    <button style="width: 200px;height: 100px;">悬浮事件</button>
+    <div class="label1" >content</div>
+    <button style="width: 200px;height: 100px;">键盘按下</button>
+    <div class="label2" >content</div>
+
+</body>
+<script>
+    btn = document.getElementsByTagName('button')[0];
+    btn.onclick= function(){
+        // this.innerHTML ="cnm"
+
+        //ajax第一步创建对象
+        const xhr = new XMLHttpRequest();
+        //后缀参数?a=200
+        xhr.open('get','http://localhost:8000/server?cnm=cnm&cnb=cnb')
+        //发送
+        xhr.send();
+        
+        //处理返回
+        //readyState是chr对象属性，五个值0-5，未初始化-open-send-receivePart-receiveAll
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4){
+                //判断响应状态 200 4004 403 401 500
+                if(xhr.status >= 200 || xhr.status<300) {//2开头都是表示成功的 201 206
+                    //结果 行 头 空 体
+                    //行
+                    // console.log(xhr.status);//状态码
+                    // console.log(xhr.statusText);//状态str
+                    // console.log(xhr.getAllResponseHeaders());//所有响应头
+                    // console.log(xhr.response);//响应体
+
+                    document.querySelector('.label').innerHTML = xhr.response;
+
+                }
+            }
+        }
+    }
+    btn1 = document.getElementsByTagName('button')[1];
+    btn1.addEventListener("mouseover",function(){
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST','http://localhost:8000/server?cnm=2');
+
+                //设置请求头
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded')//设置请求体类型
+        // xhr.setRequestHeader('nameYXY','cnm')//设置请求体类型
+
+
+                // xhr.send('a=100&nm=cnm');
+        
+        xhr.send("name=100&ndm=cnm");
+
+        xhr.onreadystatechange = ()=>{
+            if(xhr.readyState ===4){
+                if(xhr.status===200){
+                    this.innerHTML = xhr.response;
+                }
+            }
+        }
+    });
+
+    window.onkeydown = function(){
+        document.querySelector('.label2').innerHTML = "cnm";
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET','http://localhost:8000/jason-server');
+        xhr.send();
+        xhr.onreadystatechange = ()=>{
+            if(xhr.readyState ===4){
+                if(xhr.status===200){
+                    // document.querySelector('.label2').innerHTML = xhr.response;
+
+                    let jsonObj = JSON.parse(xhr.response);
+                    console.log(jsonObj);
+                    document.querySelector('.label2').innerHTML = jsonObj.id;
+
+                }
+            }
+        }
+    }
+
+</script>
+</html>

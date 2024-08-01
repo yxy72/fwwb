@@ -1,0 +1,211 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+    -webkit-user-select:none;
+}
+#MainPage{
+    min-width: 1000px
+}
+body{
+    /* 溢出隐藏 */
+    overflow: hidden;
+    min-width: 1920px;
+}
+.navbar{
+    position: absolute;
+    width: 100px;
+
+}
+/* 小勾选框图标没乐 */
+.navbar input{
+    display: none;
+}
+/* 就那个隐藏按钮其实是个label */
+.navbar label{
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 100%;
+    padding-left: 20px;
+    color: #5a738e;
+    background-color: #ededed;
+    border: 1px solid #d9dee4;
+    /* 鼠标变成伸出食指的手嗷~ */
+    cursor: pointer;
+    /* 加过渡 */
+    transition: all 0.5s;
+    
+}
+.navbar ul{
+    width: 87px;
+    height: 100vh;
+    
+    overflow: hidden;
+    transition: all 0.5s;
+    position: absolute;
+    margin-top: 50;
+    /* 神他妈top=0 */
+    top: 0;
+}
+.splitLine{
+    width:15px;
+    height:1px;
+    background-color:#d5d5d54f;
+    margin-left: 36px;
+}
+.navBlackBgd  {
+    position: absolute;
+    width:76px; 
+    height:100vh; 
+    background-color: #16191c;
+    margin-left: 4px;
+    transition: all 0.5s;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.747);
+}
+.navbar input:checked ~ div{
+    width: 200px;
+}
+.navbar ul li{
+    height: 64px;
+    
+    transition: all 0.5s;
+}
+.navbar ul li:first-child{
+    /* 弹性布局 让班尼特在该盒子内垂直水平居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-left: -2px;
+    margin-bottom:25px;
+}
+.navbar ul li:first-child img{
+    width: 65px;
+    border-radius: 50%;
+}
+.navbar ul li:first-child span{
+    /* 先把文字隐藏起来 */
+    display: none;
+    color:#fff;
+    /* 禁止文字换行 */
+    white-space: nowrap;
+}
+/* 现在开始操作文字 */
+.navbar ul li button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* orientation变为水平布局 */
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: #d1d1d1af;
+    /* 取消下划线 */
+    /* text-decoration: none; */
+    cursor: pointer;
+    background: transparent;
+    border-radius: 6%;
+    border: none;
+    outline: none;
+    transition: all 0.15s ;
+}
+.navbar ul li button i{
+    font-size: 22px;
+    margin-bottom: 5px;
+    transition: all 0.25s ;
+}
+.navbar ul li button span{
+    font-size: 10px;
+}
+
+.navbar ul li button:hover{
+    color: #fff;
+
+}
+.addd button:hover{
+    
+   background-color: #35495d3b;
+}
+.iconfont.icon-shuju{
+    font-size: 18px;
+}
+/* .navbar ul li button:focus{
+    color: #fff;
+    background-image: url("../res/img/ItemBgd.png");
+
+} */
+/* 兄弟选择器+ 选label收缩checkBox */
+.navbar input:checked + label{
+    left: 200px;
+}
+
+/* 连锁兄弟选择器~  */
+.navbar input:checked ~ ul{
+    width: 200px;
+}
+
+.navbar input:checked ~ ul li:first-child{
+    /* 选中后为水平布局 */
+    justify-content: flex-start
+}
+.navbar input:checked ~ ul li:first-child span{
+    /* 显示文字 */
+    display: block;
+    padding-left: 10px;
+}
+
+
+
+
+.topBar{
+    padding: 0;
+    margin: 0;
+}
+.topBar ul{
+    
+    min-width: 800px;
+}
+.topBar ul li{
+    font-size: 19px;width: 160px;color: #fff;list-style-type:none;
+    float: left;
+    font-family: "微软雅黑";
+    font-weight: 200;
+    
+}
+.topBar ul li button{
+    margin-top: 5px;
+    color: #d2d2d2;
+    font-size: 18px;
+    transition: all 0.25s;
+    
+    background: transparent;
+    border: none;
+    /* 取消点击框框 */
+    outline: none;
+    /* 变成小手手 */
+    cursor: pointer;
+
+    width: 90px;
+}
+.topBar ul li div{
+    transition: all 0.25s;
+}
+.TopSelect button:hover{
+    color: #fff;
+}
+.TopSelect button:focus + div{
+    background-color: #3a78f3;
+}
+.TopSelect div{
+    width: 90px;height: 5px;background-color: transparent; position: relative; bottom: -10px;border-radius: 5px;
+}
+
+
+.MainContainer{
+    
+    margin-top: 12px; margin-left: 93px; width: 94.8vw;
+    border: none;
+    overflow: hidden;
+    /* background-color: yellow; */
+}

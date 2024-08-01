@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/PageD_2.css">
+    <link rel="stylesheet" href="../res/font/iconfont.css">
+    <link rel="stylesheet" href="../css/Con_list.css">
+
+</head>
+<body>
+    <!-- yxy的终焉之战！ -->
+    <!-- <div style="color: #d2d2d2;">这一页暂时莫得东西</div> -->
+    <!-- <div class="cnm" style="width: 100px;height: 100px;background-color: yellow;position: absolute;z-index: 10;" >?</div> -->
+
+    <div class="page">
+            <div class="finalContainer">
+                <div class="finalGrid">
+        
+        
+                    <div class="area1">
+                        <div class="a1row1">
+                            <div class="IconPanel">
+                                <img class="Img" src="../res/img/PA3_p5.png">
+                            </div>
+                            <div class="IconLabel">桥梁列表</div>
+                            <div class="Tips">(当前总计 项数据)</div>
+                            <!-- <button class="MainBtn1" onclick="rebort()">reset</button> -->
+        
+                        </div>
+                        <div class="a1row2">
+                            <div class="TableContainer">
+                                <table class="ListTableTitle">
+                                    <tr class="trTitle">
+                                        <th id="th0">桥梁对象</th>
+                                        <th id="th1">经纬度</th>
+                                        <th id="th2">位置</th>
+                                        <th id="th3">巡检量</th>
+                                        <th id="th4">传感器</th>
+                                        <th id="th5">温度</th>
+                                        <th id="th6">湿度</th>
+                                        <th id="th7">伸缩缝</th>
+                                        <th id="th8">应力</th>
+                                        <th id="th9">索力</th>
+                                        <th id="th10">沉降</th>
+                                        <th id="th11">备注</th>
+                                        <th id="th12">历史</th>
+                                        <th id="th13">创建时间</th>
+                                        <th id="th14">修改时间</th>
+                                        <th id="th15">操作</th>
+                                    </tr>
+                                </table>
+                                <div class="helpHide">
+                                    <table class="ListTableBody">
+                                        <!-- <tr>
+                                            <td>BT20280435</td>
+                                        </tr> -->
+                                    </table>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+        
+        
+                    <div class="area1_5" style="visibility: hidden;">
+                        <div class="area2DragDiv"></div>
+                        <div class="area2">
+                            <div class="Area2Row1">
+                                <div class="Area2Row1Rectangle"></div>   
+                                <div class="Area2Row1Lebal">新增桥梁对象 - BT20280435</div>   
+                                <!-- <img class="imgClose" onclick="closeBottom()" src="../res/img/PD2_4.png"> -->
+                                <div class="guanbi" onclick="closeBottom()">关闭</div>
+                                <div class="spiltLine"></div>
+                                <!-- <div class="Area2Row1Tips">(当前总计 个)</div>
+                                <button class="a2Btn0" title="跳转至警报值编辑界面" onclick="toEditAlert()"><i class="iconfont icon-tianxie2"></i> -->
+                           </div>
+                           <div class="Area2Row2">
+                                <div class="a2Column1">
+            
+                                    <div class="a2c1Grid">
+            
+            
+                                        <div class="itemRow" id="a1">
+                                            <div class="iconPanel">
+                                                <i class="iconfont icon-mubiao"></i>
+                                            </div>
+                                            <div class="itemLabel" id="itemBridgeLabel">桥梁编号：</div>
+                                            <input class="itemInput" id="bridge" type="text" style="width: 120px;" value="PC12138" onfocus="focus1(0)">
+                                            <button class="itemBtn" title="复制" onclick="copyID()"><i class="iconfont icon-fuzhi" style="font-size: 20px;"></i>
+        
+                                        </div>
+                                        <div class="itemRow" id="a2">
+                                            <div class="iconPanel">
+                                                <i class="iconfont icon-tubiao-"></i>
+                                            </div>
+            
+                                            <div  class="itemLabel">经纬度：</div>
+                                            <input class="itemInput" id="lltude" type="text" style="width: 180px;" value="103.992363,30.768739" onfocus="focus1(1)">
+                                            <button class="itemBtn" title="在地图中选择" onclick="toMapPage()"><i class="iconfont icon-zu9535"></i>
+            
+                                        </div>
+                                        <div class="itemRow" id="a3">
+                                            <div class="iconPanel">
+                                                <i class="iconfont icon-weizhibiaoji"></i>
+                                            </div>
+            
+                                            <div  class="itemLabel">位置： &nbsp&nbsp</div>
+                                            <input class="itemInput" id="location" type="text" style="width: 200px;padding-bottom: 3px;" value="四川省成都市金牛区" onfocus="focus1(2)">
+            
+                                        </div>
+                                        <div class="itemRow" id="a4">
+                                            <div class="iconPanel">
+                                                <i class="iconfont icon-tianxie2"></i>
+                                            </div>
+                                            <div  class="itemLabel">备注：</div>
+                                            <textarea class="remarkInput" id="remark" type="text" value=""></textarea>
+            
+            
+            
+                                        </div>
+                                    </div>
+            
+            
+                                    
+            
+            
+            
+                                </div>
+                                <div class="a2Column2">
+                                    <div class="a2c2Grid">
+                                        
+                                        <div class="itemRow" style="grid-area: b1;">
+                                            
+                                            <div  class="itemLabel" style="font-size: 22px;">编辑传感器：</div>
+                                            <div  class="itemTips">当前共计0个传感器</div>
+                                        </div>
+            
+                                        <div class="itemSubRow" style="grid-area: b2;">
+                                            <div class="iconPanel">
+                                                <img class="img" src="../res/img/PD2_1.png">
+                                            </div>
+                                            <div  class="itemSubLabel" style="color: whitesmoke;font-size: 15px;">新增：</div>
+            
+                                            <div style="width: 20px;">&nbsp</div>
+                                            <div class="itemSubLabel">类型：</div>
+                                            <input class="itemInput" id="type" type="text" style="padding-bottom: 3px;" value="温度传感器" onfocus="focus1(3)">
+            
+                                            <div style="width: 20px;">&nbsp</div>
+                                            <div class="itemSubLabel">编号：</div>
+                                            <input class="itemInput" id="sort" oninput = "value=value.replace(/[^\d]/g,'')"  type="text" style="padding-bottom: 3px;width: 70px;" value="12140" onfocus="focus1(4)">
+            
+                                            <div style="width: 20px;">&nbsp</div>
+                                            <div class="itemSubLabel">警报阈值：</div>
+                                            <input class="itemInput" id="alertVal" oninput = "value=value.replace(/[^\d]/g,'')"  type="text" style="padding-bottom: 3px;width: 60px;" value="512" onfocus="focus1(5)">
+                                            
+                                            <div class="btnArea">
+                                                <button class="itemBtn" style="width: 60px;margin-left: 20px;" title="自动填充" onclick="ptConfirm()">确定</i>
+                                            </div>
+                                            <div class="Tips" id="confirmPtTip">已记录该操作</div>
+                                               
+            
+            
+                                        </div>
+                                        <div class="itemSubRow" style="grid-area: b3;">
+                                            <div class="iconPanel">
+                                                <img class="img" src="../res/img/PD2_3.png">
+                                            </div>
+                                            <div  class="itemSubLabel" style="color: whitesmoke;font-size: 15px;">删除：</div>
+                                        
+                                            <div class="choseDiv" id="chose1">
+                                                <div class="label"></div>
+                                                <button class="chose">
+                                                    <div class="arrow"></div>
+                                                    <div class="chosed"></div>
+                                                </button>
+                                                <div class="choseList">
+                                                    <ul class="ul"id="ul">
+                                                    </ul>
+                                                </div>
+                                            </div>
+            
+                                            <div class="btnArea">
+                                                <button class="itemBtn" style="width: 60px;margin-left: 20px;" title="自动填充" onclick="ptDelete()">删除</i>
+                                            </div>
+                                            <div class="Tips" id="deletePtTip">已记录该操作</div>
+                                        </div>
+        
+        
+                                        <div class="confirmRow" style="grid-area: b4;">
+                                                
+                                            <div class="confirmArea"><button class="confirmDel" onclick="SubmitDelete();">删除</button></div>
+        
+                                                <div class="confirmArea"><button class="confirm" onclick="Submit();">提交</button></div>
+                                                <div class="confirmVisibility">
+                                                    <div class="confirmTips" id="confirmTip">提交成功，提交时间：</div>
+                                                    <div class="confirmTips" id="confirmTime">?</div>
+                                                </div>
+        
+                                                
+                                        </div>
+        
+        
+                                    </div>
+            
+                                   
+        
+            
+                                </div>
+                           </div>
+                        </div>
+        
+                    </div>
+        
+                 
+        
+                </div>
+            </div>
+     
+    </div>
+
+
+    
+
+    <script src="../JS/PageD_2.js"></script>
+    <script>
+        Resize();
+        function Resize(){
+            document.querySelector('.page').style.height = window.innerHeight+"px";
+            document.querySelector('.page').style.width = window.innerWidth+"px";
+
+        }
+        window.addEventListener('resize',function(){
+            Resize();
+        })
+    </script>
+
+</body>
+</html>

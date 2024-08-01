@@ -1,0 +1,687 @@
+*{
+    margin: 0;
+    padding-left: 0;
+    
+    -webkit-user-select:none;
+}
+
+
+
+
+.row1{
+    width: 100%;
+    height: 20%;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.row2{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    background-color: #282d32;
+}
+.R1Chart{
+    width: 83%;height: 100%;
+}
+.B1Chart{
+    width: 100%;height: 100%;
+}
+.row2TipsPanel{
+    width: 17%;height: 100%;
+    margin-top: 10px;
+}
+.row2Img{
+    margin-top: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    content: url("../res/img/ItemBgd.png");
+}
+.row2tip1{
+    width: 80px;
+    color: gray;
+    text-align: center;
+}
+.row2Average{
+    color: white ;
+    position: absolute;
+    width: 80px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 27px;
+    text-shadow: 1px 1px 5px #000;
+}
+.row3Container{
+    width:85%;
+    display: flex;
+    float: left;
+    color: rgb(180, 180, 180);
+}
+.ExceedContainer{
+    color: rgb(180, 180, 180);
+    position: absolute;
+    right: 20px;
+    display: flex;
+}
+.row3{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+}
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+.Container{
+    width: 99%;
+    height:  99%;
+
+}
+.PA3Container{
+    display: grid;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+        "pt pt r1"
+        "pm pm r1"
+        "pm pm r2"
+        "b1 b2 r3"
+    ;
+    grid-template-columns: 33.1% 33.1% 33.1%;
+    grid-template-rows:.15fr .85fr 1fr 1fr;
+
+    /* grid-template-columns: 50% 50% 0;
+    grid-template-rows:45px 1fr 0 0; */
+
+    column-gap: 10px;
+    row-gap: 10px;
+    min-width: 1200px;
+    min-height: 800px;
+
+}
+
+
+.PanelMain{
+    grid-area: pm;
+    background-color: #282d32;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    /* background-image:url("../res/img/BridgeBgd.jpg"); */
+    background:linear-gradient(#363c43,#29323a);
+
+    background-size: cover;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.PTRow1{
+    height: 100%;
+    display: flex;
+    float: left;
+    width: 900px;
+    align-items: center;
+}
+.PTRow0{
+    /* 典型例子要参照 词缀：震撼 */
+    height: 100%;
+    display: flex;
+    float: right;
+    /* background-color: red; */
+    align-items: center;
+    margin-right: 10px;
+    position: relative;
+}
+.PanelTitle{
+    grid-area: pt;
+    /* background-color: #282d32;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2); */
+    /* display: flex;  */
+    float: left; 
+}
+.PTImg{
+    width: 26px;
+    height: 26px;
+}
+.PTIconPanel{
+    margin-left: 20px;
+    border-radius: 6px;
+    background-color: rgb(211, 243, 253);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+}
+.PTIcon{
+    margin-left: 10px;
+    color: whitesmoke;
+    font-size: 17px;
+}
+.PTIconLabel{
+    margin-left: 10px;
+    
+    color: whitesmoke;
+    font-size: 21px;
+    /* width: 320px; */
+    font-weight: 600;
+    float: right;
+}
+.PTTime{
+    /* margin-left: 640px; */
+    color: whitesmoke;
+    font-size: 12px;
+    display: flex;
+    float: left;
+}
+
+
+
+
+
+.PanelR1{
+    grid-area: r1;
+    position: relative;
+    background-color: #282d32;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+}
+.PanelR2{
+    grid-area: r2;
+    position: relative;
+
+    background-color: #282d32;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.PanelR3{
+    grid-area: r3;
+    position: relative;
+
+    background-color: #282d32;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.PanelB1{
+    grid-area: b1;
+    position: relative;
+
+    background-color: #282d32;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.PanelB2{
+    grid-area: b2;
+    background-color: #282d32;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+
+}
+.PanelB2{
+    grid-area: b2;
+    background-color: #282d32;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.iconPanel{
+    margin-left: 15px;
+    border-radius: 6px;
+    background-color: rgb(211, 243, 253);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+}
+.iconLabel{
+    margin-left: 10px;
+    width: 100%;
+    color: whitesmoke;
+    font-size: 17px;
+}
+
+.img1{
+    width: 23px;
+    height: 23px;
+}
+.itemPanel{
+    width: 33.33%;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.itemDiv{
+    width: 13px;
+    height: 13px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.5);
+
+}
+.itemLabel{
+    margin-left: 5px;
+    
+    color: whitesmoke;
+}
+.itemStatus{
+    margin-left: 5px;
+    color: tomato;
+}
+
+.R2Chart{
+    width: 83%;height: 100%;
+}
+.R3Chart{
+    width: 100%;height: 100%;
+}
+.SetPanel{
+    right: 18px;
+    font-size: 12px;
+    color: wheat;
+    position: absolute;
+}
+.SetPanelCNM{
+    margin-left: 1550px;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    font-size: 12px;
+    color: wheat;
+    margin-top: 800px;
+}
+.SetPanelInput{
+    background: transparent;
+    border-bottom: 1px solid blanchedalmond;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    outline: none;
+    width: 45px;
+    color: #fff;
+    padding-left: 3px;
+    padding-top:25px;
+    margin-top: -24px;
+    
+    text-align: center;
+}
+
+.chart3num{
+    color: rgb(180, 180, 180);
+}
+
+
+/* 剽的PA1 */
+.RChart1Container{
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 80%;
+    background-color:  #282d32; height: 270px;float: left;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    
+}
+.RChart1{
+    width: 50%;
+    height: 110%;
+}
+.RChart2{
+    width: 50%;
+    height: 110%;
+}
+.RChart1LabelContainer{
+    display: flex;
+    float: left;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 130px;
+}
+.runHint1{
+    font-size:16px;
+    color: rgba(30, 255, 0, 0.411);
+    font-size: 14px;
+    margin-left: 2px;
+    margin-right: 20px;
+}
+
+
+.brow1{
+    width: 100%;
+    height: 20%;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.brow2{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    background-color: #282d32;
+}
+
+
+.A1R1BtnArea{
+    /* background: goldenrod; */
+    /* width: 380px;
+    min-width: 300px; */
+    /* height: auto; */
+    margin-left: 20px;
+    margin-right: 2px;
+    /* z-index: 10; */
+    /* 规定z-index=10的情况为btn。 */
+}
+.a1r1Btn{
+
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    border-radius: 5px;
+
+    outline: none;
+    cursor: pointer;
+    color: white;
+
+
+    /* 到底为什么要padding-left: 5px;啊不然不对称气死我了！！！ */
+    padding-left: 7px;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 65px;
+    height: 36px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.a1r1Btn:hover{
+    text-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom right, #3f4449, #31393f);
+}
+.a1r1ListControl{
+    /* background-color: wheat; */
+    height: 36px;
+    z-index: 1;
+}
+.A1R1ListBody{
+    width: 120px;
+    height: 200px;
+    background-color: #313538;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    outline: none;
+    /* margin-top: 180px; */
+    overflow: scroll;
+}
+.ul{
+    white-space: nowrap;
+    overflow:scroll;    
+    
+}
+::-webkit-scrollbar {
+    /*隐藏滚轮*/
+    display: none;
+}
+.ul li{
+    list-style:none;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: 0px 0px 6px 6px rgb(255, 255, 255);
+    align-items: center;
+    
+}
+.ul li:hover{
+    background-color: #393f44;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+
+.debugBtn{
+
+    position: absolute;
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 95px;
+    height: 30px;
+    padding-left: 7px;
+    margin-left: -100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.a2Btn0{
+
+    position: absolute;
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 80px;
+    height: 30px;
+    margin-left: 170px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.a2Btn0:hover,.debugBtn:hover,.a2Btn:hover{
+    
+    text-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom right, #3f4449, #31393f);
+}
+
+
+.Area2Row1Rectangle{
+    width: 8px;
+    height: 30px;
+    background-color: #3a78f3;
+    border-radius: 5px;
+    margin-left: 25px;
+}
+.Area2Row1Lebal{
+    color: rgb(0, 102, 218);
+    
+    font-size: 22px;
+    height: auto;
+    margin-left: 8px;
+}
+.guanbi{
+    position: absolute;
+    color: tomato;
+    margin-left: 1160px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.spiltLine{
+    border-bottom: 2px solid rgb(124, 124, 124);
+    width: 97%;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 20px;
+}
+.area1_5{
+    width: 1780px;
+    height: 400px;
+    margin-left: 20px;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    /* justify-content: flex-start; */
+}
+.area2{
+    width: 1230px;
+    height: 400px;
+    background-image: linear-gradient(to bottom right, #d8dadb, #7f8386);
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    position: absolute;
+}
+.area2DragDiv{
+    width: 100%;
+    height: 60px;
+    border-radius: 15px;
+    z-index: 3;
+    position: absolute;
+    cursor: move;
+    display: flex;
+    align-items: center;
+}
+.window{
+    background-image: linear-gradient(to bottom right, #ffffff, #cad1d8);
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    /* left: 2px; */
+    position: absolute;
+    z-index: 2;
+
+
+    display: grid;
+    grid-template-rows: 60px 60px 1fr;
+    grid-template-areas: "a2Area1" "detailRow" "detaiArea" ;
+
+
+
+}
+.detailChartArea{
+    grid-area: detaiArea;
+    width: 100%;
+    /* background-color: black; */
+}
+.detailChart{
+    width: 100%;
+    height: 100%;
+}
+.detailRow{
+    grid-area: detailRow;
+    display: flex;
+    align-items: center;
+    position: relative;;
+}
+.detailContainer{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+.TempContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: gray; */
+    display: flex;
+    align-items: center;
+}
+.tImg{
+    width: 30px;
+    height: 30px;
+    margin-left: 60px;
+}
+.crrAlertDataCon{
+    font-weight: 600;
+}
+.Area2Row1{
+    grid-area: a2Area1;
+    /* background-color: red; */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    /* position: absolute; */
+}
+.dragArea{
+    width: 100%;
+    height: 100%;
+    /* background-color: black; */
+    position: absolute;
+    
+    width: 80%;
+    height: 80%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+
+    min-width: 800px;
+    min-height: 600px;
+
+}
+.byebyeArea{
+    width: 100vw;
+    height: 100vh;
+    background-color: none;
+    position: absolute;
+    z-index: 1;
+}
+.closeBtn{
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    z-index: 5;
+}
+.crrLabel{
+    color: tomato;
+    font-weight: 540;
+}
+.alertImg{
+    width: 32px;
+    height: 30px;
+    margin-left: 60px;
+    margin-right: 5px;
+}
+.crrExceed{
+    color: gray;
+    font-size: 14px;
+}
+
+/* .webglContainer{
+    
+    background-color: gray;
+} */
+
+.scale1{
+
+    position: absolute;
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+}
+.scale1:hover{
+    
+    text-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom right, #3f4449, #31393f);
+}
+.scale1Img{
+    width: 27px;
+    height: 27px;
+    margin-left:8px;
+    margin-top: -2px;
+}

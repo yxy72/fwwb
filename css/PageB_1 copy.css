@@ -1,0 +1,277 @@
+*{
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+.choseList{
+    width: 108px;
+    height: 144px;
+    background-color: wheat;
+    position: absolute;
+    margin-left: 52px;
+    margin-top: 33px;
+    background-color: #393f44;box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    border-radius: 3px;
+}
+.PageBContainer{
+    width: 100%;
+    height: 92vh;
+    display: grid;
+    grid-template-areas: 
+    "form form form whatContainer"
+    "B1Container B2Container B3Container B3Container";
+    grid-template-columns: 30% 35% 18% 15% ;
+    
+    grid-template-rows: 550px 450fr;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.formContainer{
+    grid-area: form;
+    margin-top: 7px;
+    margin-left: 7px;
+    min-width: 1200px;
+    background-color: #282d32;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+}
+.formTip{
+    margin-top: 15px;
+    font-size: 18px;
+    color: rgb(225, 225, 225);
+}
+.tableDiv{
+    margin-top: 0px;
+    margin-left: 30px;
+    overflow: scroll;
+    height: 420px;
+    width: 96%;
+
+}
+
+.tableDiv::-webkit-scrollbar {display:none}
+.formDataNum{
+    color: wheat;
+    font-size: 2px;
+    position: absolute;
+    margin-left: 56px;
+    margin-top: 2px;
+}
+.formPicture{
+    display: flex;float: left;
+    width: 30px;
+    margin-top: 18px;
+    margin-left: 18px;
+    margin-right: 8px;
+}
+.form{
+    
+    width: 100%;
+}
+.form b{
+    color: #1ba3fe;
+    font-weight: 400;
+    cursor: pointer;
+}
+.listSort{
+    width: 24px;
+}
+.formTitle{
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 96%;
+}
+.formTitle th{
+    color: #6d7c89;
+    font-weight: 600;
+    background-color: #1f2327;
+    height: 45px;
+    font-size: 18px;
+}
+.form td{
+    color: #c4cfd6;
+    height: 36px;
+    
+    min-width: 100px;
+    justify-content: center;
+    text-align: center;
+    
+}
+.choseDiv{
+    display: flex;
+    float: right;
+    margin-top: -25px;
+    margin-right: 54px;
+    font-size: 18px;
+    color: blanchedalmond;
+}
+.arrow{
+    width: 0;
+    height: 0;
+    border-top: 8px solid rgb(255, 255, 255);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    margin-left: 92px;
+}
+.arrow:hover{
+    cursor: pointer;
+}
+.chose{
+    width: 110px;
+    height: 32px;
+    margin-left: 15px;
+    background-color: #393f44;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    outline: none;
+    margin-top: -2px;
+}
+
+.chose:hover{
+    background-color: #3d4347;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+}
+.choseDiv button:focus + div{
+    visibility:visible;
+}
+.choseList li{
+    list-style:none;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: 0px 0px 6px 6px rgb(255, 255, 255);
+    align-items: center;
+}
+.choseList li:hover{
+    background-color: #2f353a;
+    cursor: pointer;
+}
+
+.chosed{
+    position: absolute;
+    margin-left: 15px;
+    font-size: 17px;
+    margin-top: -16px;
+    color: rgb(255, 242, 224);
+}
+
+
+.whatContainer{
+    grid-area: whatContainer;
+    
+    margin-top: 7px;
+    margin-left: 7px;
+    background-color: #282d32;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+    min-width: 200px;
+}
+.B1Container{
+    grid-area: B1Container;
+    margin-top: 7px;
+    margin-left: 7px;
+    background-color: #282d32;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+}
+.B2Container{
+    grid-area: B2Container;
+    margin-top: 7px;
+    margin-left: 7px;
+    background-color: #282d32;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+}
+.B3Container{
+    grid-area: B3Container;
+    margin-top: 7px;
+    margin-left: 7px;
+    background-color: #282d32;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+}
+.wTitleImg{
+    width: 10px;
+    height: 30px;
+    border-radius: 20%;
+    background-color: #3a78f3;
+    position: absolute;
+    margin-left: 19px;
+    margin-top: 15px;
+}
+.wTitleLabel{
+    color: white;
+    margin-left: 36px;
+    margin-top: 15px;
+    font-size: 20px;
+    margin-bottom:40px;
+}
+.wDownload{
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 160px;
+    height: 50px;
+    margin-top: 240px;
+    margin-left: 54px;
+
+
+    font-size: 18px;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+}
+.wDownload:hover{
+    text-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom right, #3f4449, #31393f);
+}
+
+.selBtnPanel{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.selBtnBgd{
+    width: 54px;
+    height: 30px;
+    background-color: royalblue;
+    border-radius: 25px;
+    position: absolute;
+    transition: all 0.15s;
+    margin-left: 160px;
+}
+.selBtn{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.25s;
+    
+    margin-left: 184px;
+}
+.selLabel{
+    margin-left: 55px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.856);
+    font-family:  "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    margin-top: 3px;
+    position: absolute;
+}
+.selImg{
+    display: flex;
+    float: left;
+    width: 30px;
+    margin-left: 18px;
+    margin-right: 8px;
+    position: absolute;
+}

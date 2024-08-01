@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/PageD_1.css">
+    <link rel="stylesheet" href="../res/font/iconfont.css">
+    <link rel="stylesheet" href="../css/Con_list.css">
+
+</head>
+<body>
+    <!-- <div style="color: #d2d2d2;">这一页暂时莫得东西</div> -->
+    <div class="pd1MainContainer">
+        
+
+        <div class="pd1Grid">
+            <div class="area1">
+                <div class="a1row1">
+                    <div class="IconPanel">
+                        <img class="Img" src="../res/img/PD1_1.png">
+                    </div>
+                    <div class="IconLabel">用户列表</div>
+                    <div class="Tips">(当前总计 项数据)</div>
+                    <!-- <button class="MainBtn1" onclick="rebort()">reset</button> -->
+
+                </div>
+                <div class="a1row2">
+
+                    <div class="TableContainer">
+                        <table class="ListTableTitle">
+                            <tr class="trTitle">
+                                <th id="th0">姓名</th>
+                                <th id="th1">工号</th>
+                                <th id="th2">职位</th>
+                                <th id="th3">权限</th>
+                                <th id="th4">备注</th>
+                                <th id="th5">操作</th>
+                            </tr>
+                        </table>
+                        <div class="helpHide">
+                            <table class="ListTableBody">
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="a1row3">
+                    
+                </div>
+
+
+
+
+            </div>
+
+            <div class="area2">
+                <div class="Area2Row1">
+                    <div class="Area2Row1Rectangle"></div>   
+                    <div class="Area2Row1Lebal">新增</div>   
+                </div>
+
+                <div class="a2InputArea">
+
+                    <div class="Area2Row2">
+                        <div>姓名：</div>
+                        <input class="a2r2Input" id="submit1" type="text" onfocus="focus1(1)"  value="请输入">
+                    </div>
+                    <div class="Area2Row2">
+                        <div>工号：</div>
+                        <input class="a2r2Input" oninput = "value=value.replace(/[^\d]/g,'')" id="submit2" type="text"  onfocus="focus1(2)" value="请输入">
+                        <button class="a2Btn0" title="自动填充" onclick="fill()"><i class="iconfont icon-tiankongti"></i>
+                        </button>
+
+                    </div>
+                    <div class="Area2Row2">
+                        <div>职位：</div>
+                        <input class="a2r2Input" id="submit3" type="text"  onfocus="focus1(3)"  value="请输入">
+                    </div>
+                    <div class="Area2Row2">
+                        <div>权限：</div>
+                        <div class="choseDiv" id="chose1">
+                            <div class="label"></div>
+                            <button class="chose" style="width: 85px;">
+                                <div class="arrow"></div>
+                                <div class="chosed" id="submit4"></div>
+                            </button>
+                            <div class="choseList" style="width: 85px;">
+                                <ul class="ul"id="ul">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Area2Row2">
+                        <div>备注：</div>
+                    </div>
+                    <div class="Area2Row3">
+                        <input class="a2r3Input" id="submit5" type="text" onfocus="focus1(5)" maxlength="12" value="请输入少于12个字">
+
+                        <!-- <textarea class="remarksArea">请输入少于12个字</textarea> -->
+                    </div>
+                    
+                    <div class="Area2Row5" style="visibility: hidden;">
+                        <div class="confirmTips" id="confirmTip">提交成功：</div>
+                        <div class="confirmTips" id="confirmTime">了吗</div>
+                </div>
+                    <div class="Area2Row4">
+                        <button class="a2Btn"  onclick="post()">提交</button>
+                    </div>
+                    
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+        
+    </div>
+
+
+
+
+    <script src="../JS/PageD_1.js"></script>
+    <script>
+        Resize();
+        function Resize(){
+            document.querySelector('.pd1MainContainer').style.height = window.innerHeight+"px";
+
+        }
+        window.addEventListener('resize',function(){
+            Resize();
+        })
+    </script>
+</body>
+</html>

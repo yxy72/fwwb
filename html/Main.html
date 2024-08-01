@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页面</title>
+    <!-- 图标库访问 -->
+    <link rel="stylesheet" href="../res/font/iconfont.css">
+    <link rel="stylesheet" href="../css/Main.css">
+    <style>
+        *{
+            font-size: 15px;
+        }
+        
+    </style>
+    <script src="../JS/Main.js"></script>
+</head>
+<body onload="load()" style="background-color: #1f2327;">
+    <div name="MainPage">
+        <div class="navbar">
+            <input type="checkbox" id="checkbox">
+            <!-- for=将表单绑定至id为checkbox的元素，作用：点label时会focus到label指向的控件 -->
+            <label for="checkbox" hidden><i class="iconfont icon-zhihang" style="font-size: 27px;"></i></label>
+            <div class="navBlackBgd"></div>
+            
+            
+            <ul>
+                <li>
+                    <img src="../res/img/ys.png" alt=""><span>嘻嘻</span></li>
+                <li><button id="no1Btn" onclick="navSelected(1)"><i id="no1Icon" class="iconfont icon-zu9535"></i></button><div class="splitLine" ></div></li>
+                <li><button id="no2Btn" onclick="navSelected(2)"><i id="no2Icon" class="iconfont icon-shuju"></i><span ></span></button><div class="splitLine" ></div></li>
+                <li><button id="no3Btn" onclick="navSelected(3)"><i id="no3Icon" class="iconfont icon-zhihang"></i><span></span></button><div class="splitLine" ></div></li>
+                <li><button id="no4Btn" onclick="navSelected(4)"><i id="no4Icon" class="iconfont icon-yunhang"></i><span></span></button><div class="splitLine" ></div></li>
+                <li><button id="no5Btn" onclick="NavbarExitButtonClicked()"><i id="no5Icon" class="iconfont icon-guanbi7"></i><span></span></button></li>
+                
+                <li class="addd"><button  style="background-image: url(../res/icon/add.png);background-size:contain; width: 35px;height: 35px;margin-left: 24px; bottom: 6vh;position: absolute;"></button></li>
+            </ul>
+            
+        </div>
+        <div class="topBar" style=" background-color: #282d32;width: 100vw;min-width: 1600px;;height: 56px;box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.2); display: flex;align-items: center" >
+            <ul>
+                <li style="width: 270px;"><div>&nbsp</div></li>
+                <li class="TopSelect"><button href="javascript:;" onclick="topSelected(1);" id="topseclet1">区域总览</button><div id="topDiv1"></div></li>
+                <li class="TopSelect"><button href="javascript:;" onclick="topSelected(2);" id="topseclet2">监控平台</button><div id="topDiv2"></div></li>
+                <li class="TopSelect"><button href="javascript:;" onclick="topSelected(3);" id="topseclet3">历史数据</button><div id="topDiv3"></div></li>
+                <li class="TopSelect"><button href="javascript:;" onclick="topSelected(4);" id="topseclet4"></button><div id="topDiv4"></div></li>
+
+            </ul>
+        </div>
+        <!-- <div class="cnm" style="width: 100px;height: 100px;background-color: yellow;position: absolute;" >?</div> -->
+
+        <iframe class="MainContainer" id="MainContainer"  style="overflow: hidden;" ></iframe>
+
+    </div>
+            
+
+        
+    <script>
+        // var test =document.querySelector('.cnm');
+
+        HeightResize();
+        function HeightResize(){
+            document.getElementById('MainContainer').style.height = window.innerHeight-80+"px";
+
+        }
+        window.addEventListener('resize',function(){
+            HeightResize();
+            // test.innerHTML = document.getElementById('MainContainer').offsetHeight
+
+        })
+    </script>
+        
+    
+        
+    
+</body>
+
+</html>

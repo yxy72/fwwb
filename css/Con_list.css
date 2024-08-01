@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.choseList{
+    
+    width: 100px;
+    height: 320px;
+    background-color: wheat;
+    position: fixed;
+    margin-top: 34px;
+    background-color: #393f44;box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    border-radius: 5px;
+    z-index: 3;
+}
+.choseList ul{
+    margin-top: 5px;
+    height: 96%;
+    white-space: nowrap;
+    overflow:scroll;
+    
+}
+::-webkit-scrollbar {
+    /*隐藏滚轮*/
+    display: none;
+    }
+.chose{
+    width: 100px;
+    height: 100%;
+    background-color: #313538;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    outline: none;
+    
+    
+}
+.label,.tail{
+    height: 100%;
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    color: blanchedalmond;
+    width: auto;
+
+}
+.chose:hover{
+    background-color: #3d4347;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.choseDiv button:focus + div{
+    visibility:visible;
+}
+.choseDiv{
+    color: #ffffff;
+    display: flex;
+    float: left;
+    height: 32px;
+    width: auto;
+}
+.choseList li{
+    list-style:none;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: 0px 0px 6px 6px rgb(255, 255, 255);
+    align-items: center;
+}
+.choseList li:hover{
+    background-color: #2f353a;
+    cursor: pointer;
+}
+.arrow{
+    width: 0;
+    height: 0;
+    border-top: 8px solid rgb(255, 255, 255);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    margin-right: 6px;
+    display: flex;
+    float: right;
+    cursor: pointer;
+    z-index: 3;
+}
+.chosed{
+    position: fixed;
+    margin-left: 15px;
+    font-size: 17px;
+    margin-top: -7px;
+    color: rgb(255, 242, 224);
+    /* z-index: 2; */
+    width: auto;
+    height: auto;
+}

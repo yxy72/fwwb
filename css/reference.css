@@ -1,0 +1,6 @@
+/* 去除滚动条 */
+.container::-webkit-scrollbar {display:none}
+
+/* 过度 */
+/* background-image: linear-gradient(to bottom right, #363c43, #29323a); */
+

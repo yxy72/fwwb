@@ -1,0 +1,422 @@
+*{
+    margin: 0;
+    padding-left: 0;
+    user-select: none;
+}
+.Container{
+    width: 100%;
+}
+.grid{
+    margin: 8px;
+    display: grid;
+    grid-template-areas:
+        "gm gm gm gr"
+        "gb1 gb2 gb3 gr"
+    ;
+    grid-template-rows: 1000fr 340px;
+    grid-template-columns: 300fr 600fr 360px 461fr;
+
+
+    column-gap: 15px;
+    row-gap: 15px;
+
+    height: 91vh;
+
+    /* background-color: rebeccapurple; */
+}
+.gridMap{
+    grid-area: gm;
+    background-color: #282d32;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    min-width: 600px;
+    height: 100%;
+}
+.gridRight{
+    grid-area: gr;
+    background-color: #282d32;width: 461px;height: 100%;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+    height: 100%;
+}
+
+.gridRight div i{
+    font-size: 27px;
+    align-items: center;
+    justify-content: center;
+}
+.gridBottom1{
+    grid-area: gb1;
+    display: flex;
+    
+    height: 100%;
+    min-width: 350px;
+    background-color: #282d32; width: 100%; height: 100%;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.gridBottom2{
+    grid-area: gb2;
+    min-width: 600px;
+    
+    height: 100%;
+    background-color: #282d32; width: 100%; height: 100%;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.map1{
+    border: black; box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    width: 100%; height:100% 
+}
+.chart1{
+    background-color:  #282d32; width: 100%;height: 100%;float: left;
+}
+.list1{
+    border-bottom: 0; background-color:  #282d32; width: 100%;height: 100%;float: left;
+    
+}
+
+
+
+
+.iconfont.icon-weizhibiaoji{
+    font-size: 22px;
+    color: rgb(196, 63, 63);
+    margin-left: 20px;
+}
+.iconfont.icon-GPS{
+    font-size: 27px;
+    margin-left: 20px;
+    color: rgb(63, 132, 196);
+}
+
+/*地址和GPS文字*/
+.RText{
+    color: rgb(155, 152, 152);
+    font-size: 14px;
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    margin-left: 8px;
+    align-items: center;
+    justify-content: start;
+}
+
+
+
+
+.split{
+    font-size: 20px;
+    border-bottom: rgba(255, 255, 255, 0.452) solid 1px;
+    height: 60px;
+    width: 90%;
+    margin-left: 20px;
+}
+
+
+
+
+
+/*以下为第一行*/
+.Rtitle{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+/*no Icon*/
+.iconfont.icon-bianhao{
+    font-size: 36px;
+    margin-top: -18px;
+    margin-left: -36px;
+    color: blanchedalmond;
+    position: absolute;
+}
+/*no:UID*/
+.noNumber{
+    font: size 16px;
+    color: blanchedalmond;
+    cursor: pointer;
+}
+/*当前选中系统文字*/
+.Rtitle1{
+    margin-left: 10px;
+    font-size: 22px;
+    width: 282px;
+    color: whitesmoke;
+}
+.titleBlank{
+    width: 0px;
+}
+
+.RtitleDiv{
+    width: 10px;
+    height: 30px;
+    border-radius: 20%;
+    background-color: #3a78f3;
+    margin-left: 20px;
+}
+.BeforeRChart{
+    height: 60PX;
+}
+.RChart{
+    margin-top: 240px;
+    background-color: rebeccapurple;
+    height: 160px;
+}
+.RChart1Container{
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 80%;
+    background-color:  #282d32; height: 270px;float: left;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    
+}
+.RChart1{
+    width: 100%;
+    height: 100%;
+}
+.RChart1LabelContainer{
+    display: flex;
+    float: left;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 130px;
+}
+.runHint1{
+    font-size:16px;
+    color: rgba(30, 255, 0, 0.411);
+    font-size: 14px;
+    margin-left: 2px;
+    margin-right: 20px;
+}
+
+.iconfont.icon-zhengchang{
+    font-size: 18px;
+    color: rgba(30, 255, 0, 0.411);
+}
+.RChart2Container{
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 80%;
+    height: 270px;float: left;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    
+}
+.RChart2{
+    width: 100%;
+    height: 100%;
+}
+.RChart2LabelContainer{
+    display: flex;
+    float: left;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 130px;
+}
+
+.detailBtn{
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 45px;
+    margin: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: 900;
+}
+.btns{
+    width: 100%;
+    height: 50px;
+    margin-top: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detailBtn:hover{
+    
+    text-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom right, #3f4449, #31393f);
+}
+
+
+
+
+
+.iconfont.icon-zhengchang1{
+    font-size: 18px;
+    color: rgba(30, 255, 0, 0.685);
+}
+.runHint{
+    font-size:16px;
+    color: rgb(155, 152, 152);
+    font-size: 14px;
+    margin-left: 2px;
+    margin-right: 20px;
+}
+.runTimeHint{
+    font-size:16px;
+    color: rgba(155, 152, 152, 0.507);
+    font-size: 14px;
+    margin-left: 2px;
+}
+.row2{
+    margin-left: 30px;
+    margin-top: 5px;
+    display: flex;
+    float: left;
+    width: 100%;
+}
+.G3Row1{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    float: left;
+    align-items: center;
+}
+.split1{
+    font-size: 20px;
+    border-bottom: rgba(255, 255, 255, 0.452) solid 1px;
+    height: 60px;
+    width: 100%;
+}
+.Rtitle2{
+    margin-left: 10px;
+    font-size: 22px;
+    width: 100%;
+    color: whitesmoke;
+}
+
+.gridBottom3{
+    grid-area: gb3;
+    width: 100%;
+    min-width: 350px;
+    background-color: #282d32; width: 100%; height: 100%;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+}
+.G3Row2{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    float: left;
+    align-items: center;
+}
+.G3Label{
+    margin-left: 10px;
+    color: blanchedalmond;
+
+}
+.G3Icon{
+    width: 20px;
+    height: 20px;
+}
+.G3Input{
+    width: 96px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom:1px solid rgb(255, 255, 255);
+    background-color: #23282b;
+    box-shadow: 0px 0px 3px 3px #24292c;
+    color: whitesmoke;
+    font-size: 16px;
+    text-align: center;
+}
+.G3IconPanel{
+    margin-left: 32px;
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    width: 27px;
+    height: 27px;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+}
+.G3InputGroup{
+    display: flex;
+    float: left;
+}
+.G3Label2{
+    
+    color: white;
+}
+.G3Input2{
+    width: 96px;
+    background: none;
+    outline: none;
+    border: none;
+    background-color: #23282b;
+    box-shadow: 0px 0px 3px 3px #24292c;
+    color: whitesmoke;
+    font-size: 16px;
+    text-align: center;
+}
+.G3Row3{
+    color: gray;
+    font-size: 12px;
+    text-align: right;
+    width: 100%;
+}
+.G3Button{
+    
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    outline: none;
+    cursor: not-allowed;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 86px;
+    height: 36px;
+    font-size: 13px;
+    text-align: center;
+}
+.G3Button:hover{
+    text-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom right, #3f4449, #31393f);
+}
+.G3Row4{
+    margin-left: 32px;
+    
+    color: gray;
+    display: flex;
+    font-size: 12px;
+    height: 50px;
+    align-items: center;
+}
+.G3Split{
+    
+    font-size: 20px;
+    border-bottom: rgba(255, 255, 255, 0.144) solid 1px;
+    margin-bottom: 10px;
+    height: 8px;
+    width: 90%;
+    margin-left: 20px;
+}
+
+.a2Btn0{
+
+    position: absolute;
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 27px;
+    height: 27px;
+    margin-left: 315px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iconfont.icon-tianxie2{
+    font-size: 18px;
+    margin-left: 5px;
+}
+.a2Btn0:hover{
+    
+    text-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom right, #3f4449, #31393f);
+}

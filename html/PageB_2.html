@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../res/font/iconfont.css">
+    <link rel="stylesheet" href="../css/PageB_2.css">
+    <link rel="stylesheet" href="../css/Con_list.css">
+</head>
+</head>
+<body>
+
+    
+<!-- 
+    <div class="page">
+        <div class="Container">
+            <div class="B2Container">
+                <div class="locationContainer">
+        
+
+                    
+                    
+                    <div class="lcRow1">
+                        <div class="choseDiv" id="chose1">
+                            <div class="label"></div>
+                            <button class="chose">
+                                <div class="arrow"></div>
+                                <div class="chosed"></div>
+                            </button>
+                            <div class="choseList">
+                                <ul class="ul"id="ul">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="choseDiv" id="chose2">
+                            <div class="label"></div>
+                            <button class="chose">
+                                <div class="arrow"></div>
+                                <div class="chosed"></div>
+                            </button>
+                            <div class="choseList">
+                                <ul class="ul">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lcRow2" style="margin-top: 20px;">
+                        <div>桥梁编号：</div>
+                        <input class="lcRow2Input" id="B2obj" type="text" value="- -">
+                        <div class="A1R1BtnArea">
+                            <button class="a1r1Btn" onblur="autoListDisapear()"  onclick="TrySelectOnclick()"><i class="iconfont icon-tiankongti"></i></button>
+                        </div>
+                        <div class="a1r1ListControl">
+                            <div class="A1R1ListBody" style="visibility: hidden;">
+                                <ul class="ul" id="autoSelect"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lcRow2">
+                        <div>事件级别：</div>
+                        <input oninput = "value=value.replace(/[^\d]/g,'')" class="lcRow2Input"  id="B2level" style="width: 25px;" type="text" value="6" maxlength="1">
+                    </div>
+                    <div class="lcRow3">
+                        <div>检测人工号：</div>
+                        <input class="lcRow2Input" oninput = "value=value.replace(/[^\d]/g,'')" id="B2scanner" type="text" value="20210304" maxlength="9">
+                    </div>
+                    <div class="lcRow3"  style="margin-bottom: 10px;">
+                        <div>录入人工号：</div>
+                        <input class="lcRow2Input" oninput = "value=value.replace(/[^\d]/g,'')" id="B2doner" type="text" value="20210305" maxlength="9">
+                    </div>
+        
+                    <div class="lcRow4">
+                        <div class="choseDiv" id="chose3">
+                            <div class="label"></div>
+                            <button class="chose">
+                                <div class="arrow"></div>
+                                <div class="chosed"></div>
+                            </button>
+                            <div class="choseList">
+                                <ul class="ul"id="ul">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="choseDiv" id="chose4">
+                            <div class="label"></div>
+                            <button class="chose">
+                                <div class="arrow"></div>
+                                <div class="chosed"></div>
+                            </button>
+                            <div class="choseList">
+                                <ul class="ul">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="choseDiv" id="chose5">
+                            <div class="label"></div>
+                            <button class="chose">
+                                <div class="arrow"></div>
+                                <div class="chosed"></div>
+                            </button>
+                            <div class="tail"></div>
+                            <div class="choseList">
+                                <ul class="ul">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="confirmRow">
+                        <div class="confirmArea"><button class="confirm" onclick="post();">提交</button></div>
+                        <div class="confirmVisibility">
+                            <div class="confirmTips" id="confirmTip">提交成功，提交时间：</div>
+                            <div class="confirmTips" id="confirmTime">?</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="Container1">
+                    <img class="formPicture" src="../res/img/PB2_3.png" >
+                    <div class="c1Row1">病害位置及病害值</div>
+                    <div class="c1Row2Container">
+
+                        <div class="moreRow">
+                            <div class="moreLabel">· 裂缝长度：</div>
+                            <input class="lcRow2Input"  id="crackLen" style="width: 92px;" type="text" value="">
+                        </div>
+                        <div class="moreRow">
+                            <div class="moreLabel">· 裂缝位置：</div>
+                            <input class="lcRow2Input"  id="crackLoc" style="width: 92px;" type="text" value="">
+                        </div>
+                        <div class="moreRow">
+                            <div class="moreLabel">· 其他：</div>
+                            <input class="lcRow2Input"  id="crackOth" style="width: 125px;" type="text" value="">
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="Container2">
+                    <img class="formPicture" src="../res/img/list.png" >
+                    <div class="c2Row1">病害评价</div>
+                    <textarea class="c2Row2Container">经检测，桥梁的某个地方出的问题很大。</textarea>
+                </div>
+        
+                <div class="reportContainer">
+                    <img class="formPicture" src="../res/img/PB2_1.png" >
+                    <div class="rcRow1">上传检测报告</div>
+        
+                    <div class="rcContainer">
+                        <a href="javascript:;" class="addImgBtn">
+                            <input type="file" name="" id="" onchange="document.getElementById('textfield').value=this.files[0].name">
+                        </a>
+                        <input class="addLabelBtn" id="textfield" value="选择文件">
+                    </div>
+                </div>
+        
+                <div class="ImgContainer">
+                    <img class="formPicture" src="../res/img/PB2_2.png" >
+                    <div class="c1Row1">上传现场图片</div>
+                    <div class="imgInputArea">
+                        <a href="javascript:;" class="addImgBtn">
+                            <input type="file" name="file" onchange="imgPreview(this)" />
+                        </a>
+                        <div class="imgNumDiv">已选择0张图片</div>
+                        <button class="imgBtn" onclick="Clear()">清空</button>
+        
+                        <div class="imgContainer">
+                        </div>
+                    </div>
+        
+                </div>
+                <div class="SubmitContainer"></div>
+            </div>
+    
+
+        </div>
+    </div>
+
+ 
+
+ -->
+
+
+<div class="page">
+        <div class="Container">
+            <div class="B2Container">
+
+
+                <div class="b2l">
+                    <div class="formLabelRow">
+                        <img class="formPicture" src="../res/img/PB2_3.png" >
+                        <div class="formlabelRowLabel">关键构件巡检录入</div>
+                    </div>
+                    <!-- <a href="javascript:;" class="addImgBtn">上传 -->
+                        <input class="addImgBtnInput" type="file" name="file" onchange="loadName(this)" />
+                    <!-- </a> -->
+                    <div class="formContainer">
+                        <table class="formTitle">
+                            <tr>
+                                <th id="th0">部件号</th>
+                                <th id="th1">部件名称</th>
+                                <th id="th2">评分</th>
+                                <th id="th3">缺损位置</th>
+                                <th id="th4">缺损情况</th>
+                                <th id="th5">局部图片</th>
+            
+                            </tr>
+                        </table>
+                        
+                    <div class="tableDiv">
+                        <table id="form" class="form">
+                        </table>
+                    </div>
+
+                    <!-- <div style="width:90%;border-bottom: #51585e solid 1px;margin-top: 5px;margin-bottom: 5px;margin-left: 22px;"></div> -->
+
+                    <div class="row01">
+                        <img class="iconImg" src="../res/img/PB2_5.png">
+                        <div class="eva">
+                            总体状况评定等级：
+                        </div>
+                        <div class="choseDiv" id="chose0">
+                            <div class="label"></div>
+                            <button class="chose" style="width: 64px;">
+                                <div class="arrow"></div>
+                                <div class="chosed" id="submit0"></div>
+                            </button>
+                            <div class="choseList" style="width: 64px;margin-top: 0;margin-left: 66px;">
+                                <ul class="ul"id="ul">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row02">
+                        <img class="iconImg" style="width: 28px; margin-right: 12px;" src="../res/img/PB2_6.png">
+                        <div class="eva">
+                            经常性维护建议：&nbsp&nbsp&nbsp</div>
+                        <input class="evaStyle">
+
+                </div>
+
+
+                    </div>
+
+                    
+
+                </div>
+
+
+
+                <div class="b2r">
+
+                    <div class="formLabelRow1">
+                        <div class="wTitleImg"></div>
+                        <div class="formlabelRowLabel1">上传数据</div>
+                    </div>
+                    <div class="split"></div>
+                    <div class="showBody" >
+
+
+                        <div class="lcRow1">
+                            <div class="choseDiv" id="chose1">
+                                <div class="label"></div>
+                                <button class="chose">
+                                    <div class="arrow"></div>
+                                    <div class="chosed"></div>
+                                </button>
+                                <div class="choseList">
+                                    <ul class="ul"id="ul">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="choseDiv" id="chose2">
+                                <div class="label"></div>
+                                <button class="chose">
+                                    <div class="arrow"></div>
+                                    <div class="chosed"></div>
+                                </button>
+                                <div class="choseList">
+                                    <ul class="ul">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lcRow2">
+                            <div>桥梁编号：</div>
+                            <input class="lcRow2Input" id="B2obj" type="text" value="- -">
+                            <div class="A1R1BtnArea">
+                                <button class="a1r1Btn" onblur="autoListDisapear()"  onclick="TrySelectOnclick()"><i class="iconfont icon-tiankongti"></i></button>
+
+                            </div>
+                            <div class="a1r1ListControl">
+                                <div class="A1R1ListBody" style="visibility: hidden;">
+                                    <ul class="ul" id="autoSelect"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="lcRow2">
+                            <div>主跨结构：</div>
+                            <input class="lcRow2Input"  id="B2zkjg" style="width: 125px;" type="text" value="-">
+                        </div>
+                        
+                        <div class="lcRow2">
+                            <div>桥长：</div>
+                            <input class="lcRow2Input"  id="B2qc" style="width: 64px;" type="text" value="-">
+                        </div>
+                        <div class="lcRow2">
+                            <div>最大跨径：</div>
+                            <input class="lcRow2Input"  id="B2zdkj" style="width: 64px;" type="text" value="-">
+                        </div>
+                        
+                        <div class="lcRow2">
+                            <div>管养单位：</div>
+                            <input class="lcRow2Input"  id="B2gydw" style="width: 125px;" type="text" value="-">
+                        </div>
+                        <div class="lcRow2">
+                            <div>事件级别：</div>
+                            <input oninput = "value=value.replace(/[^\d]/g,'')" class="lcRow2Input"  id="B2level" style="width: 25px;" type="text" value="6" maxlength="1">
+                        </div>
+                        
+                        <div class="lcRow2">
+                            <div>气候：</div>
+                            <input class="lcRow2Input"  id="B2qh" style="width: 64px;" type="text" value="-">
+                        </div>
+                        <div class="lcRow3">
+                            <div>记录人工号：</div>
+                            <input class="lcRow2Input" oninput = "value=value.replace(/[^\d]/g,'')" id="B2scanner" type="text" value="20210304" maxlength="9">
+                        </div>
+                        <div class="lcRow3" >
+                            <div>负责人工号：</div>
+                            <input class="lcRow2Input" oninput = "value=value.replace(/[^\d]/g,'')" id="B2doner" type="text" value="20210305" maxlength="9">
+                        </div>
+            
+                        <div class="lcRow2">
+                            <div>下次检测日期：</div>
+                            <input class="lcRow2Input"  id="B2xcrq" style="width: 128px;" type="text" value="-">
+                        </div>
+                        <div class="lcRow4">
+                            <div class="choseDiv" id="chose3">
+                                <div class="label"></div>
+                                <button class="chose">
+                                    <div class="arrow"></div>
+                                    <div class="chosed"></div>
+                                </button>
+                                <div class="choseList">
+                                    <ul class="ul"id="ul">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="choseDiv" id="chose4">
+                                <div class="label"></div>
+                                <button class="chose">
+                                    <div class="arrow"></div>
+                                    <div class="chosed"></div>
+                                </button>
+                                <div class="choseList">
+                                    <ul class="ul">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="choseDiv" id="chose5">
+                                <div class="label"></div>
+                                <button class="chose">
+                                    <div class="arrow"></div>
+                                    <div class="chosed"></div>
+                                </button>
+                                <div class="tail"></div>
+                                <div class="choseList">
+                                    <ul class="ul">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="lcRow2">
+                            <div>其他备注：</div>
+                        </div>
+                        
+                        <textarea class="remarksArea">请输入备注信息</textarea>
+
+
+                        <div class="confirmRow">
+                            <div class="confirmArea"><button class="confirm" onclick="post();">提交</button></div>
+                            <div class="confirmVisibility">
+                                <div class="confirmTips" id="confirmTip">提交成功，提交时间：</div>
+                                <div class="confirmTips" id="confirmTime">?</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+</div>
+
+
+
+
+    
+    <script src="../JS/PageB_2.js"></script>
+    <script>
+        Resize();
+        function Resize(){
+            document.querySelector('.page').style.height = window.innerHeight+"px";
+            var obj = document.querySelector('.form').getElementsByTagName('td');
+            for(let i = 0;i<obj.length;i++){
+                obj[i].style.height= (window.innerHeight - 81 - 45 - 100 - 42 - 42 )/17 + "px"
+            }
+        }
+        window.addEventListener('resize',function(){
+            Resize();
+        })
+    </script>
+</body>
+
+</html>

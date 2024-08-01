@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/PageC_1.css">
+    <link rel="stylesheet" href="../css/Con_list.css">
+    <link rel="stylesheet" href="../res/font/iconfont.css">
+
+</head>
+<body">
+    <div class="page">
+        <div class="Container">
+            <div class="PC1Grid">
+                <div class="Area1">
+                    <div class="Area1Row1">
+                        <div class="A1R1IconPanel"><img class="A1R1Icon" src="../res/img/PA3_p5.png"></div>
+                        <div class="A1R1Label">当前桥梁：</div>
+                        <div class="A1R1Label" id="bridgeId" title="复制" onclick="copyLabel(this)" style="cursor: pointer;color: wheat;">在地图或右侧选择</div>
+                        <div class="A1R1BtnArea">
+                            <button class="a1r1Btn"  onclick="TrySelectOnclick()">选择</button>
+                        </div>
+                        <div class="a1r1ListControl">
+                            <div class="A1R1ListBody" style="visibility: hidden;">
+                                <ul class="ul" id="ul"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Area1Row2">
+                        <div class="Area1Row2ChartArea">
+                            <div class="onloadTip" style="width: auto;height: auto;position: absolute;color: gray;font-size: 20px;">加载中...</div>
+
+                            <!-- <div style="display: flex;align-items: center;justify-content: center;height: 100%;color: gray;font-size: large;">说是这里放3d</div> -->
+                            <iframe class="webglContainer" style="width: 100%; height: 100%;border: none;" ></iframe>
+
+                        </div>
+                    </div>
+                    <div class="Area1Row3">一些文字信息文字消息和文字信息
+                    </div>
+                </div>
+    
+    
+    
+    
+    
+                <div class="Area2">
+                   <div class="Area2Row1">
+                        <div class="Area2Row1Rectangle"></div>   
+                        <div class="Area2Row1Lebal">传感器组</div>   
+                        <div class="Area2Row1Tips">(当前总计 个)</div>
+                        <button class="a2Btn0" title="跳转至警报值编辑界面" onclick="toEditAlert()"><i class="iconfont icon-tianxie2"></i>
+    
+                   </div>
+                   <div class="Area2Row2">
+    
+                        <div class="A2R2TableContainer">
+                            <table class="A2R2ListTableTitle">
+                                <tr class="trTitle">
+                                    <th id="th0">类型</th>
+                                    <th id="th1">编号</th>
+                                    <th id="th2">实时数据</th>
+                                    <th id="th3">报警值</th>
+                                    <th id="th4">工作状态</th>
+                                    <th id="th5">正常工作时间</th>
+                
+                                </tr>
+                            </table>
+                            <div class="A2R2helpHide">
+                                <table class="A2R2ListTableBody"></table>
+                            </div>
+                        </div>
+                        
+                   </div>
+                </div>
+    
+    
+    
+                <div class="Area3">
+    
+                    <div class="Area3Row0">
+                        <div class="Area2Row1">
+                            <div class="Area2Row1Rectangle" style="height: 40%;"></div>   
+                            <div class="Area2Row1Lebal">预测选择</div>   
+                       </div>
+                    </div>
+    
+                    <div class="Area3Row1">
+    
+                        <div class="a3r1Panel">
+                            <div class="a3r1Row1">
+                                <div class="iconPanel">
+                                    <div><i class="iconfont icon-zhcc_tiaoxuanwuzi"></i></div>
+                                </div>
+                                <div class="choseDiv" id="chose1">
+                                    <div class="label"></div>
+                                    <button class="chose">
+                                        <div class="arrow"></div>
+                                        <div class="chosed"></div>
+                                    </button>
+                                    <div class="choseList">
+                                        <ul class="ul"id="ul">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="a3r1Row2">
+                                <div class="iconPanel">
+                                    <div><i class="iconfont icon-17"></i></div>
+                                </div>
+                                <div class="choseDiv" id="chose2">
+                                    <div class="label"></div>
+                                    <button class="chose">
+                                        <div class="arrow"></div>
+                                        <div class="chosed"></div>
+                                    </button>
+                                    <div class="choseList">
+                                        <ul class="ul"id="ul">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="a3r1BtnArea">
+                            <button class="a3r1Btn"  onclick="ChartQuery()">确认查询</button>
+                        </div>
+    
+    
+    
+    
+                        
+                       
+    
+    
+    
+    
+                    </div>
+    
+    
+                    <div class="Area3Row2">
+                        <div class="Area3Row2Rectangle" style="height: 40%;"></div>   
+                        <div class="Area3Row2Lebal">数据预测结果</div>   
+                    </div>
+    
+    
+                    <div class="Area3Row3">
+    
+                        <div class="a3r3Panel">
+                            <div class="PredictChart"></div>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="../JS/echarts.min.js"></script>
+    <script src="../JS/PageC_1.js"></script>
+    <script>
+        Resize();
+        function Resize(){
+            document.querySelector('.page').style.height = window.innerHeight+"px";
+            document.querySelector('.page').style.width = window.innerWidth+"px";
+
+        }
+        window.addEventListener('resize',function(){
+            Resize();
+        })
+    </script>
+</body>
+</html>

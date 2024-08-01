@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="../css/PageC_2.css">
+    <link rel="stylesheet" href="../res/font/iconfont.css">
+</head>
+<body>
+    <!-- <div style="color: #d2d2d2;">这一页暂时莫得东西</div> -->
+    <div class="page">
+        <div class="pc2Container">
+            <div class="pc2Grid">
+                <div class="Area1">
+                    <div class="A1R1IconPanel"><img class="A1R1Icon" src="../res/img/PA3_p5.png"></div>
+                    <div class="A1R1Label">当前桥梁：</div>
+                    <div class="A1R1Label" id="bridgeId" title="复制" onclick="copyLabel(this)" style="cursor: pointer;color: wheat;">在地图或右侧选择</div>
+                        
+                    <div class="A1R1BtnArea">
+                        <button class="a1r1Btn"  onclick="TrySelectOnclick()">选择</button>
+                    </div>
+                    <div class="a1r1ListControl">
+                        <div class="A1R1ListBody" style="visibility: hidden;">
+                            <ul class="ul" id="ul"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="Area2">
+                    <div class="Area2ChartArea" style="position: relative;">
+                    <!-- <div style="display: flex;align-items: center;justify-content: center;height: 100%;color: gray;font-size: large;">可是这一页太空旷乐。</div> -->
+                    <div class="onloadTip" style="width: auto;height: auto;position: absolute;color: gray;font-size: 20px;">加载中...</div>
+
+                    <iframe class="webglContainer" style="position: absolute;width: 100%; height: 100%;border: none;" src="../res/GIS/fwwbWebGl" ></iframe>
+
+                </div></div>
+                <div class="Area3">
+                    <div class="a3Row1">
+                        <div class="RowRectangle"></div>   
+                        <div class="RowLebal">当前桥梁健康评级</div>
+                    </div>
+                    <div class="spiltLine"></div>
+
+                    <div class="a3Row2">
+                        <div class="a3r2Left">
+
+                            <div class="a3r2Box">优</div>
+                            <div class="spiltLine1"></div>
+
+                            <div class="a3r2Box1">综合评分：84</div>
+                        </div>
+                        <div class="a3r2Right">
+
+                            <div class="a3Row3">
+                                <div class="a3Row3bgd">
+                                    <div class="a3r3Status" style="background-color: rgb(199, 218, 92);"></div>
+                                    <div class="a3r3c" id="eva1">
+                                        上部结构评分：
+                                        <div style="color: rgb(231, 250, 121);">65 | 良</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="a3Row3">
+                                        <div class="a3Row3bgd">
+                                            <div class="a3r3Status"></div>
+                                            <div class="a3r3c" id="eva2">
+                                                下部结构评分：
+                                                <div style="color: rgb(142, 240, 142);">90 | 优</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="a3Row3">
+                                        <div class="a3Row3bgd">
+                                            <div class="a3r3Status"></div>
+                                            <div class="a3r3c" id="eva3">
+                                                桥面系评分：
+                                                <div style="color: rgb(142, 240, 142);">100 | 优</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="a3Row3">
+                                        <div class="a3Row3bgd">
+                                            <div class="a3r3Status"></div>
+                                            <div class="a3r3c" id="eva4">
+                                                附属构造物：
+                                                <div style="color: rgb(142, 240, 142);">85 | 优</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="a3Row3">
+                                        <div class="a3Row3bgd">      
+                                            <div class="a3r3Status"></div>
+                                            <div class="a3r3c" id="eva5">
+                                                综合评估：
+                                                <div style="color: rgb(142, 240, 142);">84 | 优</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+                <div class="Area4">
+                    <div class="a4Row1">
+                        <div class="RowRectangle"></div>   
+                        <div class="RowLebal">养护建议</div>
+                    </div>
+                    <div class="spiltLine" style="margin-bottom: 20px;"></div>
+
+                    <div class="a4Row2">
+                        <div class="evaluateArea" style="opacity: 0;position: absolute;;visibility: hidden;">
+
+                        </div>
+                        <div class="a4r2row">
+                            <img class="icon4" src="../res/img/PC2_1.png"/>
+                            <div class="a4r2Caption">上部结构</div>
+                        </div>
+                        <div class="a4r2L">上部一般承重构建：增加对加劲梁的检查；</div>
+
+                        <div class="a4r2row">
+                            <img class="icon4" src="../res/img/PC2_2.png"/>
+                            <div class="a4r2Caption">下部结构</div>
+                        </div>
+                        <div class="a4r2L">桥墩及基础：水面附近空洞处进行修复，混凝土碳化处进行修补；</div>
+
+                        <div class="a4r2row">
+                            <img class="icon4" src="../res/img/PC2_3.png" style="width: 20px;"/>
+                            <div class="a4r2Caption">&nbsp桥面系：</div>
+                        </div>
+                        <div  class="a4r2L">桥头连接：增加巡检频率；栏杆、护栏：引桥部分更换护栏；排水设施：检查泄水管和引水槽、清理堵塞</div>
+
+                        <div class="a4r2row">
+                            <img class="icon4" src="../res/img/PC2_4.png"style="width: 20px;"/>
+                            <div class="a4r2Caption">&nbsp附属构造物：</div>
+                        </div>
+                        <div class="a4r2L">锥坡、护坡：中下部浅坑处填补；</div>
+                    </div>
+
+
+
+
+                        <div class="a4r2row">
+                            <div>其他建议：</div>
+                        </div>
+                </div>
+
+                <div class="what">
+                    
+                    <div class="a4Row1">
+                        <div class="RowRectangle"></div>   
+                        <div class="RowLebal">健康报告</div>
+                    </div>
+                    <div class="spiltLine" style="margin-bottom: 20px;"></div>
+                    <div class="DETIAL">桥梁编号： CD006001 ；</div>
+                        <div class="DETIAL">桥梁位置：四川省成都市郫都区</div>
+                            <div class="DETIAL">根据沉降传感器得到的长期预测值在2020/9/1 至2020/9/2 间幅度变化过大，建议加强针对桥梁沉降问题的巡检和防护
+                                处理；</div>
+                    <div class="a3r1BtnArea">
+                        
+                        <button class="a3r1Btn"  onclick="ChartQuery()">导出详细报告</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="../JS/PageC_2.js"></script>
+    <script>
+        Resize();
+        function Resize(){
+            document.querySelector('.page').style.height = window.innerHeight+"px";
+            document.querySelector('.page').style.width = window.innerWidth+"px";
+
+        }
+        window.addEventListener('resize',function(){
+            Resize();
+        })
+    </script>
+</body>
+</html>

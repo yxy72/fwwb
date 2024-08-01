@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 图标库访问 -->
+    <link rel="stylesheet" href="../res/font/iconfont.css">
+    <link rel="stylesheet" href="../css/PageA_2.css">
+    <!-- 注意，本页原名PageA_2.html -->
+    <title>Document</title>
+</head>
+<body>
+    
+
+        <div class="page">
+            <div class="Container">
+                <!-- <div class="test">
+                    <iframe class="webglContainer" style="position: absolute;width: 100%; height: 100%;border: none;" src="../res/webgl/webgl.html" ></iframe>
+
+                </div> -->
+                <div class="grid" >
+                    <!-- http://114.215.181.67:8080/fwwb/ -->
+                    <div class="gridMap" ><iframe class="map1" id="map1" src="./BaiduMap3D.html" ></iframe></div>
+                    
+                    <div class="gridRight">
+                        
+                        <div class="BeforeRChart">
+                            <div class="Rtitle">
+                                <div class="RtitleDiv"></div>
+                                <div class="Rtitle1">在地图上选择系统</div>
+                                <!-- <div class="titleBlank"></div> -->
+                                <!-- <div><i class="iconfont icon-bianhao"></i></div> -->
+                                <div class="noNumber"id="cnm" title="复制" onclick="copyLabel(this)"></div>
+                            </div>
+                            <div class="split"></div>
+                            <div class="RText">
+                                <div><i class="iconfont icon-weizhibiaoji"></i></div>
+                                <div class="location">&nbspnone&nbsp</div>
+                                <div><i class="iconfont icon-GPS"></i></div>
+                                <div class="lltude">&nbspnone&nbsp</div>
+                            </div>
+                            <div class="row2">
+                                <div><i class="iconfont icon-zhengchang1"></i></div>
+                                <div class="runHint">&nbsp没有选中任何系统</div>
+                                <div class="rth" style="visibility:hidden; display: flex;">
+                                    <div class="runTimeHint">正常运行时间：</div>
+                                    <div class="runTimeHint" id="runTimeHint">40:21:16:38</div>
+                                </div></div>
+                        </div>
+                        
+                        
+                        <div class="RChart1Container">
+                            <div class="RChart1"></div>
+                            <div class="RChart1LabelContainer" style="visibility: hidden;">
+                                <div><i class="iconfont icon-zhengchang"></i></div>
+                                <div class="runHint1">温度数据正常</div>
+                            </div>
+                        </div>
+            
+                        
+                        <div class="RChart2Container">
+                            <div class="RChart2"></div>
+                            <div class="RChart2LabelContainer" style="visibility: hidden;">
+                                <div><i class="iconfont icon-zhengchang"></i></div>
+                                <div class="runHint1">湿度数据正常</div>
+                            </div>
+                        </div>
+                        <div class="btns">
+        
+                            <button class="detailBtn"  onclick="toPageA_2()">详情界面</button>
+                            <button class="detailBtn"  onclick="toPageB_1()">操作历史</button>
+                        
+                        </div>
+                    </div>
+                    <div class="gridBottom1">
+
+
+                            <div class="a3Row1">
+                                <div class="RowRectangle"></div>   
+                                <div class="RowLebal">当前桥梁健康评级</div>
+                            </div>
+                            <div class="spiltLine"></div>
+        
+                            <div class="a3Row2">
+                                <div class="a3r2Left">
+        
+                                    <div class="a3r2Box">优</div>
+                                </div>
+                                <div class="a3r2Right">
+        
+                                    <div class="a3Row3">
+                                        <div class="a3Row3bgd">
+                                            <div class="a3r3Status"></div>
+                                            <div class="a3r3c">
+                                                应力评估：优
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="a3Row3">
+                                        <div class="a3Row3bgd">
+                                            <div class="a3r3Status"></div>
+                                            <div class="a3r3c">
+                                                伸缩缝评估：优
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="a3Row3">
+                                        <div class="a3Row3bgd">
+                                            <div class="a3r3Status"></div>
+                                            <div class="a3r3c">
+                                                沉降评估：优
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="a3Row3">
+                                        <div class="a3Row3bgd">
+                                            <div class="a3r3Status"></div>
+                                            <div class="a3r3c">
+                                                索力评估：优
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="a3Row3">
+                                        <div class="a3Row3bgd">      
+                                            <div class="a3r3Status"></div>
+                                            <div class="a3r3c">
+                                                损伤评估：优
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                    <div class="gridBottom2">
+                        <div class="a3Row1">
+                            <div class="RowRectangle"></div>   
+                            <div class="RowLebal">系统套数省份分布</div>
+                        </div>
+                        <div class="spiltLine"></div>
+                        
+                        <div class="list1" >a</div>
+                        <!-- chart1 JS也要改 -->
+                    </div>
+                    <div class="gridBottom3">
+                        
+                        <div class="G3Row1">
+                            <div class="RtitleDiv"></div>
+                            <div class="Rtitle2">快速编辑</div>
+                            <button class="a2Btn0" title="更多操作" onclick="toCreatePage()"><i class="iconfont icon-tianxie2"></i>
+        
+                        </div>
+                        <div class="G3Row2">
+                            <div class="G3IconPanel">
+                                <img class="G3Icon" src="../res/img/PA1_p1.png" >
+                            </div>
+                            <div class="G3Label" >系统名称/编号：</div>
+                            <input class="G3Input" id="G3C1" value="bridge1">
+                        </div>
+                        <div class="G3Row2">
+                            <div class="G3IconPanel">
+                                <img class="G3Icon" src="../res/img/PA1_p2.png" >
+                            </div>
+                            <div class="G3Label">坐标：</div>
+                            <div class="G3InputGroup">  
+                                <input class="G3Input2" id="G3C2" oninput="value=value.replace(/^\D*(\d*(?:\.\d{0,6})?).*$/g, '$1')" value="103.993363">
+                                <div class="G3Label2">°，</div>
+                                <input class="G3Input2" id="G3C3" oninput="value=value.replace(/^\D*(\d*(?:\.\d{0,6})?).*$/g, '$1')" value="30.775839">
+                                <div class="G3Label2">°</div>
+                            </div>
+                        </div>
+                        <div class="G3Row3">
+                                点击地图点位自动填充。&nbsp&nbsp&nbsp&nbsp
+                        </div>
+                        <div class="G3Row4">
+                            <button class="G3Button" id="createBtn" onclick="createBridge()">生成对象</button>
+                            <div id="createTip" style="margin-left: 20px;color:lightgreen;visibility: hidden;">创建成功。</div>
+        
+                        </div>
+                        <div class="G3Split"></div>
+                        <div class="G3Row2">
+                            <div class="G3IconPanel">
+                                <img class="G3Icon" src="../res/img/PA1_p4.png" >
+                            </div>
+                            <div class="G3Label">系统名称/编号：</div>
+                            <input class="G3Input" id="G3D1" value="bridge1">
+                        </div>
+                        <div class="G3Row3">&nbsp</div>
+                        <div class="G3Row4">
+                            <button class="G3Button" style="color: tomato;" id="deleteBtn" onclick="deleteBridge()">删除对象</button>
+                            <div id="deleteTip" style=" transition: all 1.25s;margin-left: 20px;color:lightgreen;visibility: hidden;">删除成功。</div>
+        
+                        </div>
+                    </div>
+               </div>
+        </div>
+    </div>
+
+  
+
+   <!--echarts组件-->
+   <script src="../JS/echarts.min.js"></script>
+   <script src="../JS/PageA_2.js"></script>
+   <script>
+        Resize();
+        function Resize(){
+            document.querySelector('.page').style.height = window.innerHeight+"px";
+            document.querySelector('.page').style.width = window.innerWidth+"px";
+
+        }
+        window.addEventListener('resize',function(){
+            Resize();
+        })
+    </script>
+</body>
+</html>

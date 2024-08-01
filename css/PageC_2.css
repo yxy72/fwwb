@@ -1,0 +1,375 @@
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-user-select:none;
+}
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* background-color: wheat; */
+}
+.pc2Container{
+    width: 99%;
+    height:  99%;
+    /* background-color: whitesmoke; */
+}
+.pc2Grid{
+    display: grid;
+    grid-template-rows: 50px 1fr 360px ;
+    grid-template-columns: 27% 45.5% 26%;
+    grid-template-areas:
+    "area1 area1 area1"
+    "area2 area2 area2"
+    "area3 area4 what";
+    height: 100%;
+    width: 100%;
+    column-gap: 15px;
+    row-gap: 15px;
+}
+.Area1{
+    grid-area: area1;
+    
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+}
+.Area2{
+    margin-top: -15px;
+    grid-area: area2;
+    background-color: green;
+}
+
+.Area4{
+    grid-area: area4;
+
+    background-color:  #282d32;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.15);
+
+    
+}
+.A1R1IconPanel{
+    margin-left: 20px;
+    border-radius: 6px;
+    background-color: rgb(211, 243, 253);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    
+    margin-right: 10px;
+
+}
+.A1R1Icon{
+    width: 26px;
+    height: 26px;
+}
+.A1R1Label{
+
+    /* 初识inlineBlock */
+    display:inline-block;
+    height:100px;
+    line-height:100px;
+    color: whitesmoke;
+    font-size: 21px;
+    font-weight: 600;
+    width: auto;
+    /* background-color: palegoldenrod; */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+}
+.A1R1BtnArea{
+    /* background: goldenrod; */
+    /* width: 380px;
+    min-width: 300px; */
+    height: auto;
+    margin-left: 20px;
+    margin-right: 2px;
+}
+.a1r1Btn{
+
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    border-radius: 5px;
+
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 72px;
+    height: 36px;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+}
+.a1r1Btn:hover{
+    text-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom right, #3f4449, #31393f);
+}
+.a1r1ListControl{
+    /* background-color: wheat; */
+    height: 36px;
+    z-index: 1;
+}
+.A1R1ListBody{
+    width: 120px;
+    height: 200px;
+    background-color: #313538;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    outline: none;
+    /* margin-top: 180px; */
+    overflow: scroll;
+}
+.ul{
+    white-space: nowrap;
+    overflow:scroll;    
+}
+::-webkit-scrollbar {
+    /*隐藏滚轮*/
+    display: none;
+}
+.ul li{
+    list-style:none;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: 0px 0px 6px 6px rgb(255, 255, 255);
+    align-items: center;
+}
+.ul li:hover{
+    background-color: #393f44;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.whatArea{
+    /* margin: 10px; */
+    /* background-color:  #282d32; */
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    
+    width: 100%;
+    height: 100%;
+    /* background-image:url("../res/img/BridgeModel.jpg"); */
+    background-image:url("../res/img/BridgeBgd.jpg");
+    background-size:cover
+}
+.a3r1BtnArea{
+    /* background-color: gray; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.a3r1Btn{
+
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 130px;
+    height: 40px;
+    font-size: 17px;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+}
+.a3r1Btn:hover{
+    text-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom right, #3f4449, #31393f);
+}
+.Area2ChartArea{
+    /* margin: 10px; */
+    /* background-color:  #282d32; */
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    
+    width: 100%;
+    height: 100%;
+    /* background-image:url("../res/img/BridgeBgd.jpg"); */
+    background:linear-gradient(#363c43,#29323a);
+
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.DETIAL{
+    color: rgb(182, 182, 182);
+    margin-left: 20px;
+    width: 90%;
+    margin-bottom: 5px;
+}
+.Area3{
+    grid-area: area3;
+    background-color:  #282d32;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+
+}
+.a3Row1{
+    height: 14%;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+}
+.a3Row2{
+    height: 86%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+}
+.a3r2Left{
+    width: 40%;
+}
+.a3r2Right{
+    width: 50%;
+    height: 80%;
+    /* background-color: rgb(0, 158, 0); */
+}
+.a3r2Box{
+    /* background-color: #393f44; */
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 108px;
+    font-weight: 600;
+    color: rgb(60, 172, 60);
+    text-shadow: 2px 3px 15px rgba(43, 255, 0, 0.2);
+}
+.a3r2Box1{
+    /* background-color: #393f44; */
+    margin-left: -30px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: wheat;
+    text-shadow: 2px 3px 15px rgba(208, 255, 0, 0.2);
+}
+.a3Row3{
+    height: 20%;
+    width: 100%;
+    /* padding-left: 30px; */
+    /* color:rgb(190, 190, 190); */
+    color: wheat;
+    /* font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+
+}
+.a3Row3bgd{
+    height: 80%;
+    width: 85%;
+    display: flex;
+    background-color: #393f44;
+    align-items: center;
+}
+.a3r3Status{
+    width: 12px;
+    height: 10px;
+    background-color: rgb(0, 158, 0);
+    margin-left: 10px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 2px 2px rgba(78, 247, 0, 0.1);
+
+}
+.spiltLine{
+    border-bottom: 1px solid rgba(124, 124, 124, 0.123);
+    width: 90%;
+    /* position: absolute; */
+    /* margin-top: 60px; */
+    margin-left: 20px;
+}
+.spiltLine1{
+    border-bottom: 1px solid rgba(245, 222, 179, 0.603);
+    width: 62%;
+    /* position: absolute; */
+    /* margin-top: 60px; */
+    margin-left: 20px;
+}
+.a3r3c{
+    width: 100%;
+    height: 100%;;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+
+}
+.RowRectangle{
+    width: 8px;
+    height: 30px;
+    background-color: #3a78f3;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+.RowLebal{
+    color: whitesmoke;
+    /* background-color:rebeccapurple; */
+    width: 200px;
+    min-width: 200px;
+    font-size: 20px;
+    /* display: inline-block;
+    height: 10px;
+    line-height: 10px; */
+    height: auto;
+    margin-left: 8px;
+}
+
+
+.a4Row1{
+    height: 14%;
+    display: flex;
+    align-items: center;
+    min-width: 800px;
+}
+.a4Row2{
+    height: 86%;
+    /* background-color: white; */
+    margin-left: 20px;
+}
+.a4r2row{
+    /* background-color: rgb(0, 158, 0); */
+    height: 36px;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.856);
+}
+.icon4{
+    width: 25px;
+    /* background-color: white; */
+}
+.a4r2Caption{
+    font-size: 18px;
+    font-weight: 500;
+    color: wheat;
+}
+.a4r2L{
+    margin-left: 20px;
+    color: rgba(245, 245, 245, 0.836);
+    margin-bottom: 13px;
+}
+.evaluateArea{
+    color: gray;
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 95%;
+    word-break: break-all;
+    /* background-color: white; */
+}
+.what{
+    
+    background-color:  #282d32;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+}

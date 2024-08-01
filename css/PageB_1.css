@@ -1,0 +1,736 @@
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none;
+}
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+
+}
+.Container{
+    width: 99%;
+    height:  99%;
+    
+}
+.PageBContainer{
+    width: 99%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+    "form form form"
+    "B1Container B2Container B3Container";
+    grid-template-columns: 29% 38% 33% ;
+    
+    grid-template-rows: 10fr 320px;
+    column-gap: 12px;
+    row-gap: 12px; 
+    min-width: 1400px;
+
+
+}
+
+.formContainer{
+    grid-area: form;
+    min-width: 1200px;
+    background-color: #282d32;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+}
+.formTip{
+    margin-top: 15px;
+    font-size: 18px;
+    color: rgb(225, 225, 225);
+}
+
+.tableDiv::-webkit-scrollbar {display:none}
+.tableDivNew::-webkit-scrollbar {display:none}
+
+.formPicture{
+    display: flex;float: left;
+    width: 30px;
+    margin-top: 18px;
+    margin-left: 18px;
+    margin-right: 8px;
+}
+.form{
+    
+    -webkit-user-select: auto;
+    width: 100%;
+}
+.form b{
+    color: #1ba3fe;
+    font-weight: 400;
+    cursor: pointer;
+}
+.listSort{
+    width: 24px;
+}
+.formTitle{
+    margin-left: 30px;
+    width: 96%;
+    min-width: 1750px;
+}
+.tableDiv{
+    margin-left: 30px;
+    overflow: scroll;
+    width: 1750px;
+    min-width: 1750px;
+    margin-bottom: 10px;
+}
+
+.formTitle th{
+    color: #6d7c89;
+    font-weight: 600;
+    background-color: #1f2327;
+    height: 45px;
+    font-size: 18px;
+}
+.form td{
+
+    color: #c4cfd6;
+    height: 36px;
+    min-width: 100px;
+    justify-content: center;
+    text-align: center;
+
+}
+/* .formPicture{
+    
+} */
+
+
+/* .choseDiv{
+    display: flex;
+    float: right;
+    margin-top: -25px;
+    margin-right: 54px;
+    font-size: 18px;
+    color: blanchedalmond;
+} */
+.arrow{
+    width: 0;
+    height: 0;
+    border-top: 8px solid rgb(255, 255, 255);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    margin-left: 92px;
+}
+.arrow:hover{
+    cursor: pointer;
+}
+
+
+.chose:hover{
+    background-color: #3d4347;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+}
+.choseDiv button:focus + div{
+    visibility:visible;
+}
+.choseList li{
+    list-style:none;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: 0px 0px 6px 6px rgb(255, 255, 255);
+    align-items: center;
+}
+.choseList li:hover{
+    background-color: #2f353a;
+    cursor: pointer;
+}
+
+.chosed{
+    position: absolute;
+    margin-left: 15px;
+    font-size: 17px;
+    margin-top: -16px;
+    color: rgb(255, 242, 224);
+}
+
+
+.whatContainer{
+    grid-area: whatContainer;
+    
+    background-color: #282d32;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+
+    min-width: 200px;
+}
+.B1Container{
+    grid-area: B1Container;
+    background-color: #282d32;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+
+}
+.B2Container{
+    grid-area: B2Container;
+    background-color: #282d32;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.B3Container{
+    grid-area: B3Container;
+    background-color: #282d32;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+
+}
+.wTitleImg{
+    width: 8px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #3a78f3;
+    position: absolute;
+    margin-left: 19px;
+    margin-top: 15px;
+}
+.wTitleLabel{
+    color: white;
+    margin-left: 36px;
+    margin-top: 15px;
+    font-size: 20px;
+}
+.wDownload:hover,.wDownload1:hover,.MainBtn:hover,.MainBtn1:hover{
+    text-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom right, #3f4449, #31393f);
+}
+.btnPanel{
+    width: 100%;
+    height: 20%;
+    background-color: gray;
+}
+
+
+
+
+
+
+
+.selBtnPanel{
+    width: 30%;
+    margin-left: 50px;
+    position: relative;
+}
+.selBtnBgd{
+    width: 54px;
+    height: 30px;
+    background-color: royalblue;
+    border-radius: 25px;
+    transition: all 0.15s;
+    position: absolute;
+    margin-left: 120px;
+}
+.selBtn{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: absolute;
+    margin-left: 144px;
+}
+.selLabel{
+    margin-left: 35px;
+    font-size: 16px;
+    min-width: 100px;
+    color: rgba(255, 255, 255, 0.856);
+    font-family:  "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    position: absolute;
+}
+.selImg{
+    display: flex;
+    float: left;
+    width: 30px;
+    margin-right: 8px;
+}
+.exportPanelRow1{
+    display: flex;
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+}
+.selDateLabel{
+    color: blanchedalmond;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.iconfont.icon-riqi{
+    font-size: 20px;
+    margin-left: 50px;
+    color: blanchedalmond;
+}
+.iconfont.icon-mubiao{
+    font-size: 20px;
+    margin-left: 50px;
+    color: blanchedalmond;
+}
+.epImg{
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background-color: blanchedalmond;
+    position: absolute;
+    margin-left: 19px;
+    margin-top: 15px;
+}
+.selDatePanel{
+    display: flex;
+    float: left;
+    position: relative;
+}
+.selDateInput1{
+    width: 36px;
+    background: none;
+    outline: none;
+    border: none;
+    color: whitesmoke;
+    font-size: 16px;
+    text-align: center;
+}
+.selDateInput2{
+    width: 18px;
+    background: none;
+    outline: none;
+    border: none;
+    color: whitesmoke;
+    font-size: 16px;
+    text-align: center;
+
+}
+.inputBorder{
+    border-bottom: 1px solid whitesmoke;
+    width: 190px;
+    height: 1px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 92px;
+}
+
+.maohaoLabel{
+    color: gray;
+    font-size: 16px;
+    margin-top: -2px;
+}
+
+.exportPanelRow2{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    /* background-color: gray; */
+    margin-top: 200px;
+    position: absolute;
+    position: relative;
+}
+.wDownload{
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 120px;
+    height: 40px;
+
+
+    font-size: 18px;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+}
+.wDownload1{
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    position: absolute;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 30px;
+    margin-left: 400px;
+    margin-top: -20px;
+    font-size: 12px;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+}
+
+.exportTip{
+    width: 380px;
+    margin-left: 50px;
+    display: flex;
+    color: tomato;
+    font-size: 12px;
+}
+.B1row0{
+    width: 100%;
+    height: 50px;
+    margin-top: 3px;
+    display: flex;
+    float: left;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.formPicture1{
+    margin-left: 20px;
+    display: flex;float: left;
+    width: 30px;
+    height: 30px;
+}
+.formTip1{
+    margin-left: 10px;
+    font-size: 18px;
+    color: rgb(225, 225, 225);
+}
+.B1row{
+    color: rgba(245, 245, 245, 0.829);
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+.B1Label{
+    margin-left: 40px; color: burlywood;
+    min-width: 100px;
+}
+.BTip{
+    color: rgb(190, 190, 190);
+    position: absolute;
+    margin-top: 64px;
+    font-size: 20px;
+    margin-left: 40px;
+}
+.B2row1{
+    color: rgba(245, 245, 245, 0.829);
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+.B2column{
+    color: rgba(245, 245, 245, 0.829);
+    width: 50%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+.B2assess{
+    width: 100px;
+    height: 100px;
+    min-width: 540px;
+    margin-left: 60px;
+    margin-top: 5px;
+    color: gray;
+    background: none;
+    resize: none;
+    outline: none;
+    font-size: 16px;
+    border: none;
+    user-select: none;
+}
+.titleAndBtn{
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+/* 整改 */
+.MainRow1{
+    /* 这里加了display:flex使得不能一行同时左右浮动，震撼我妈一整年 */
+    align-items: center;
+    height: 72px;
+    /* background-color: red; */
+}
+.MainIcon{
+    display: flex;float: left;
+    width: 40px;
+    height: 40px;
+    margin-left: 18px;
+    margin-right: 12px;
+}
+.MainTitle{
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+.MainBtn{
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 900;
+    margin-left: 20px;
+}
+.MainBtn1{
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: 900;
+    position: absolute; width: 50px;font-weight: 100;height: 30px;margin-left: -60px;
+}
+.MainLeft{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    float: left;
+    height: 100%;
+    width: 800px;
+    min-width: 800px;
+}
+/* display=flex后浮动失效，再次震撼我妈 */
+.MainRight{
+    float: right;
+    /* background-color: blue; */
+    position: relative;
+    align-items: center;
+    width: 220px;
+    min-width: 220px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.test{
+    color: wheat;
+    position: absolute;
+    font-size: 18px;
+}
+.chose{
+    width: 110px;
+    height: 32px;
+    background-color: #393f44;box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border: black; box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    outline: none;
+    margin-left: 60px;
+}
+.choseList{
+    width: 108px;
+    height: 180px;
+    background-color: wheat;
+    position: absolute;
+    margin-left: 60px;
+    margin-top: 216px;
+    background-color: #393f44;box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    border-radius: 3px;
+    z-index: 1;
+}
+.MainRow2{
+    align-items: center;
+    height: 5px;
+}
+.formDataNum{
+    color: wheat;
+    font-size: 2px;
+    position: absolute;
+    margin-left: 68px;
+    margin-top: -14px;
+}
+.area2DragDiv{
+    width: 100%;
+    height: 60px;
+    border-radius: 15px;
+    z-index: 3;
+    position: absolute;
+    cursor: move;
+    display: flex;
+    align-items: center;
+}
+.closeBtn{
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    z-index: 5;
+}
+.Area2Row1Rectangle{
+    width: 8px;
+    height: 30px;
+    background-color: #3a78f3;
+    border-radius: 5px;
+    margin-left: 25px;
+}
+.Area2Row1Lebal{
+    color: rgb(0, 102, 218);
+    
+    font-size: 22px;
+    height: auto;
+    margin-left: 8px;
+}
+.Area2Row1{
+    grid-area: a2Area1;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.byebyeArea{
+    width: 100vw;
+    height: 100vh;
+    background-color: none;
+    position: absolute;
+    z-index: 1;
+}
+.spiltLine{
+    border-bottom: 1px solid rgb(212, 209, 209);
+    width: 94%;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 20px;
+}
+.a2Btn0{
+
+    position: absolute;
+    background-image: linear-gradient(to bottom right, #363c43, #29323a);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 45px;
+    height: 30px;
+    margin-left: 170px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.a2Btn0:hover{
+    
+    text-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom right, #3f4449, #31393f);
+}
+.dragArea{
+    position: absolute;
+    
+    width: 50%;
+    height: auto;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    min-width: 400px;
+    min-height: 400px;
+    /* background-color: gray; */
+margin-top: -300px;
+}
+.window{
+    background-image: linear-gradient(to bottom right, #ffffff, #cad1d8);
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    /* left: 2px; */
+    position: absolute;
+    z-index: 2;
+
+
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: "a2Area1" "a2Area2" ;
+}
+.Area2Row2{
+    grid-area: a2Area2;
+    height: auto;
+}
+.aRow{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+.aLabel{
+    margin-left: 20px;
+}
+#aRemark,#aDamageEva,#aDamageInfo{
+    word-break: break-all;
+    width: 90%;
+}
+.aPicture{
+    display: flex;float: left;
+    width: 30px;
+    margin-left: 36px;
+    margin-right: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/* 新时代中国特色社会主义 */
+.formTitleNew{
+    width: 100%;
+    /* background-color: gray; */
+}
+.formTitleNew th{
+    color: #6d7c89;
+    font-weight: 600;
+    background-color: #dce7f3;
+    height: 45px;
+    font-size: 18px;
+}
+.formContainerNew{
+    /* background-color: salmon; */
+    /* display: flex; */
+    /* justify-content: center; */
+    width: 95%;
+    grid-area: a2Area2;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+
+}
+.tableDivNew{
+    overflow: scroll;
+    margin-bottom: 10px;
+}
+.formNew{
+    
+    -webkit-user-select: auto;
+    width: 100%;
+}
+.formNew td{
+
+    color: #535353;
+    height: 25px;
+    /* min-width: 100px; */
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(209, 209, 209);
+}
+.newFormRow{
+    display: flex;
+}
+.newFormStyle{
+    color: gray;
+    font-size: 14px;
+}
+.newFormStyle1{
+    font-size: 14px;
+}
