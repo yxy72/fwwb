@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桥梁监测系统</title>
+    <script>
+        
+        function login(){
+            let usr = document.getElementById('username');
+            let pas = document.getElementById('password');
+            // if(usr.value=="admin"&&pas.value=="admin")
+                return true;
+            // else{
+            //     alert('用户名或密码输入错误');
+            //     return false;
+            // }
+        
+        }
+        function bye(){
+            window.location.href = "./Main.html";
+        }
+    </script>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input,button{
+            /* 输入框的布局 */
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+        h2{
+            text-align: center;
+            color: #fff;
+            margin-bottom: 60px;
+        }
+        .loginBox{
+            /* 大框框的布局 */
+            width: 320px;
+            height: 364px;
+            background: rgba(0,0,0,.6);
+            padding: 50px;
+            color: #419ABD;
+            box-shadow: 0px 15px 25px 0 rgba(0,0,0,.6);
+        }
+        body{
+            height: 100vh;
+            /* 100vh指可见高度的100% */
+            background: linear-gradient(#141e30,#243b55);
+            background-image: url(../res/img/BridgeBgd.jpg);
+            background-size: 100% 100%;
+            /* 中心布局三要素 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* 默认颜色 */
+            font-size: 18px;
+            color: #03e9f4;
+        }
+        .item{
+            height: 45px;
+            border-bottom: 1px solid #fff;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .item input{
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            padding-top:20px;
+            box-sizing: border-box;
+        }
+        /* 输入框获取焦点  +label表示把label一起改了*/
+        .item input:focus+label,  .item input:valid+label{
+            top:0px;
+            font-size: 16px;
+        }
+        .item label{
+            position: absolute;
+            left: 0;
+            top: 12px;
+
+            /* focus后的变化 */
+            transition: all 0.25s ;
+
+        }
+        
+        .btn>span{
+            position: absolute;
+        }
+        .btn>span:nth-child(1){
+            width: 100%;
+            height: 2px;
+            background: -webkit-linear-gradient(left,transparent,#03e9f4);
+            left:-100%;
+            top:0px;
+            animation: line1 1s linear infinite;
+        }
+        /* 动画 */
+        @keyframes line1{
+            50%,100%{
+                left: 100%;
+            }
+        }
+        .btn>span:nth-child(2){
+            width: 2px;
+            height: 100%;
+            background: -webkit-linear-gradient(top,transparent,#03e9f4);
+            right: 0;
+            top:-100%;
+            /* 有延时0.25s */
+            animation: line2 1s 0.25s linear infinite;
+        }
+        @keyframes line2{
+            50%,100%{
+                top: 100%;
+            }
+        }
+        .btn>span:nth-child(3){
+            width: 100%;
+            height: 2px;
+            background: -webkit-linear-gradient(right,transparent,#03e9f4);
+            left:100%;
+            bottom:0px;
+            animation: line3 1s 0.5s linear infinite;
+        }
+        @keyframes line3{
+            50%,100%{
+                left: -100%;
+            }
+        }
+        .btn>span:nth-child(4){
+            width: 2px;
+            height: 100%;
+            background: -webkit-linear-gradient(bottom,transparent,#03e9f4);
+            left:0;
+            bottom:-100%;
+            animation: line4 1s 0.75s linear infinite;
+        }
+        @keyframes line4{
+            50%,100%{
+                bottom: 100%;
+            }
+        }
+        .btn{
+            padding:10px 20px ;
+            /* 试试去掉这句话 */
+            overflow: hidden;
+            margin-top: 30px;
+            color: #03e9f4;
+            position: relative;
+
+            /* 变大写 */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        /* 鼠标悬浮特效 */
+        .btn:hover{
+          border-radius: 5px;
+          color: #fff;
+          background: #03e9f4;
+          box-shadow: 0 0 5px 0 #03e9f4,
+                      0 0 25px 0 #03e9f4,
+                      0 0 50px 0 #03e9f4,
+                      0 0 100px 0 #03e9f4;
+        }
+        .exitBtn{
+            color: #03e9f4; font-size:14px; margin-top: -38px;margin-left: 90px;position: absolute;
+        
+            padding:10px 20px ;}
+        .exitBtn:hover{
+        border-radius: 5px;
+        background: #18c9ff1a;
+        color: #fff;
+        }
+        .tips{
+            position: absolute;
+            margin-top:540px;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            width: 400px;
+            height: 60px;
+        }
+        .tips3{
+            position: absolute;
+            margin-top: 599px;
+            color: white;
+            margin-left: -80px;
+            font-size: 12px;
+        }
+        .tips4{
+            position: absolute;
+            margin-top: 599px;
+            color: white;
+            margin-left: 120px;
+            font-size: 12px;
+        }
+    </style>
+
+</head>
+<!-- onLoad="document.msg.un.focus()" -->
+<body onLoad="document.msg.btn.focus()">
+    <script>
+        function exit(){
+            window.opener=null;
+            window.open('','_self');
+            window.close();
+        }
+        
+        const xhr = new XMLHttpRequest();
+        //后缀参数?a=200
+        xhr.open('get','http://47.108.197.27:8000/time')
+        //发送
+        xhr.send();
+        
+        //处理返回
+        //readyState是chr对象属性，五个值0-5，未初始化-open-send-receivePart-receiveAll
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4){
+                //判断响应状态 200 4004 403 401 500
+                if(xhr.status >= 200 || xhr.status<300) {//2开头都是表示成功的 201 206
+                    //结果 行 头 空 体
+                    //行
+                    // console.log(xhr.status);//状态码
+                    // console.log(xhr.statusText);//状态str
+                    // console.log(xhr.getAllResponseHeaders());//所有响应头
+                    // console.log(xhr.response);//响应体
+
+                    document.querySelector('.tips4').innerHTML = xhr.response;
+
+                }
+            }
+        }
+        
+    </script>
+    <div class="loginBox">
+        <h2>桥梁安全监测系统</h2>
+
+        <!-- 非空校验 -->
+        <form  action="javascript:bye()" onsubmit="return login()" name="msg">
+
+            <div class="item">
+                <input type="text" id="username" name="un" value="" required>
+                <label for="">用户名</label>
+            </div>
+            <div class="item">
+                <input type="password" id="password" value="" required>
+                <label for="">密码</label>
+            </div>
+            <button id="btn" class="btn">登录
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+        </form>
+        <!-- /非空校验 -->
+        
+    <button class="exitBtn" onclick="exit()">退出</button>
+   
+    </div>
+    <!-- <div class="tips">增加了3D图，但原码加载速度过慢；仅有桥梁Cyberpunk3608拥有详情界面的数据；仅有桥梁Cyberpunk3608的温度、应力、伸缩缝、沉降传感器具有长期预测图。</div> -->
+    <!-- <div class="tips">数据对接。</div> -->
+    <!-- <div class="tips">索力与沉降绝对值。（注意清除浏览器缓存）</div> -->
+    <!-- <div class="tips">数据提交新增裂缝格；操作细则中人工检测数据新增详细窗口</div> -->
+    
+    <!-- <div class="tips">数据提交新增裂缝格；操作细则中人工检测数据新增详细窗口；更新了短期预测；桥梁管理界面可以快捷通向历史细则查询。</div> -->
+    <!-- <div class="tips">预。</div>
+
+    <div class="tips3">最近一次运行时间：&nbsp&nbsp&nbsp&nbsp&nbsp</div> -->
+    
+    <!-- <div class="tips4">加载中</div> -->
+
+
+</body>
+</html>
